@@ -1,0 +1,117 @@
+{
+    "character": [
+        {
+            "character_id": 1,
+            "name": "イサン"
+        },
+        {
+            "character_id": 2,
+            "name": "ファウスト"
+        },
+        {
+            "character_id": 3,
+            "name": "ドンキホーテ"
+        },
+        {
+            "character_id": 4,
+            "name": "良秀"
+        },
+        {
+            "character_id": 5,
+            "name": "ムルソー"
+        },
+        {
+            "character_id": 6,
+            "name": "ホンル"
+        },
+        {
+            "character_id": 7,
+            "name": "ヒースクリフ"
+        },
+        {
+            "character_id": 8,
+            "name": "イシュメール"
+        },
+        {
+            "character_id": 9,
+            "name": "ロージャ"
+        },
+        {
+            "character_id": 11,
+            "name": "シンクレア"
+        },
+        {
+            "character_id": 12,
+            "name": "ウーティス"
+        },
+        {
+            "character_id": 13,
+            "name": "グレゴール"
+        }
+    ],
+    "personality": [
+        {
+            "personality_id": 1,
+            "character_id": 1,
+            "name": "LCBの囚人",
+            "skill": [
+                {
+                    "name": "斬撃",
+                    "text": "bbb",
+                    "emotion": "憤怒",
+                    "target_number": 1,
+                    "base_attack": 4,
+                    "coin_number": 2,
+                    "coin_attack": 2,
+                    "coin_effect": [
+                        "[的中時]出血威力3",
+                        "[表面的中時]出血威力4"
+                    ],
+                    "buff_debuff": [
+                        "出血"
+                    ]
+                }
+            ],
+            "deffence" : {
+                "name": "防御",
+                "text": "bbb",
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 8,
+                "coin_effect": [
+                    "[的中時]出血威力3",
+                    "[表面的中時]出血威力4"
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            },
+            "passive": {
+                "name": "パッシブ1",
+                "text": "aaa",
+                "trigger": [
+                    {
+                        "emotion": "憤怒",
+                        "number": 3
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            },
+            "support_passive": {
+                "name": "サポートパッシブ2",
+                "text": "aaa",
+                "trigger": [
+                    {
+                        "emotion": "憤怒",
+                        "number": 3
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            }
+        }
+    ]
+}
