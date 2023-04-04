@@ -177,9 +177,14 @@ function recalculate() {
     <input type="checkbox" v-model="buff_debuff" value="釘" v-on:change="recalculate()" />釘
   </div>
 
-  <label v-for="v in data.view" :key="v.personality.personality_id">
-    {{ v.character.name }} {{ v.personality }}}
-  </label>
+  <div>
+    <label v-for="v in data.view" :key="v.personality.personality_id">
+      {{ v.character.name }} {{ v.personality }}}
+    </label>
+  </div>
   
-  <label>{{ data }}</label>
+  <div>
+    {{ all_data }}
+  </div>
+
 </template>
