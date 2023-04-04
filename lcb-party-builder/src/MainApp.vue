@@ -90,11 +90,11 @@ function recalculate() {
   console.log(skill_sin.value)
   console.log(buff_debuff.value)
 
-  const charactor_select = (character.value ? all_data.personality.filter(p => character.value.includes(p.character_id)) : all_data.personality).map(p => p.personality_id)
+  const charactor_select = (character.value.length ? all_data.personality.filter(p => character.value.includes(p.character_id)) : all_data.personality).map(p => p.personality_id)
 
   console.log(`charactor_select ${charactor_select}`)
 
-  const resistance_select = (resistance.value 
+  const resistance_select = (resistance.value.length 
   ? all_data.personality.filter(p => {
     const sl = resistance.value.includes("slashing") ? p.resistance.slashing < 1.0 : true
     const pe = resistance.value.includes("penetration") ? p.resistance.penetration < 1.0 : true
@@ -105,7 +105,7 @@ function recalculate() {
 
   console.log(`resistance_select ${resistance_select}`)
 
-  const skill_sin_select = (skill_sin.value 
+  const skill_sin_select = (skill_sin.value.length 
   ? all_data.personality.filter(p => {
     p.skill.find(s => skill_sin.value.includes(s.sin))
   }) 
@@ -113,7 +113,7 @@ function recalculate() {
 
   console.log(`skill_sin_select ${skill_sin_select}`)
 
-  const buff_debuff_select = (buff_debuff.value 
+  const buff_debuff_select = (buff_debuff.value.length 
   ? all_data.personality.filter(p => {
     const skill_buff_debuff = p.skill.find(s => s.buff_debuff.filter(b => buff_debuff.value.includes(b)))
     const defence_buff_debuff = p.defence.buff_debuff.find(b => buff_debuff.value.includes(b))
