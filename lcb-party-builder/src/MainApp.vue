@@ -84,11 +84,18 @@ const data = ref<{
   view: []
 })
 
+data.value.view = all_data.personality
+  .map(p => {
+    const view: View = {
+      character: all_data.character.find(c => c.character_id === p.character_id)!,
+      personality: p,
+    }
+    return view
+  })
+
 function recalculate() {
-  console.log(character.value)
-  console.log(resistance.value)
-  console.log(skill_sin.value)
-  console.log(buff_debuff.value)
+  const aaa = all_data.personality.filter(p => character.value.includes(p.character_id))
+  console.log(`aaa ${aaa}`)
 
   const charactor_select = (character.value.length ? all_data.personality.filter(p => character.value.includes(p.character_id)) : all_data.personality).map(p => p.personality_id)
 
@@ -99,7 +106,7 @@ function recalculate() {
     const sl = resistance.value.includes("slashing") ? p.resistance.slashing < 1.0 : true
     const pe = resistance.value.includes("penetration") ? p.resistance.penetration < 1.0 : true
     const bl = resistance.value.includes("blow") ? p.resistance.blow < 1.0 : true
-    sl && pe && bl
+    sl || pe || bl
   }) 
   : all_data.personality).map(p => p.personality_id)
 
@@ -194,12 +201,8 @@ function recalculate() {
 
   <div>
     <label v-for="v in data.view" :key="v.personality.personality_id">
-      {{ v.character.name }} {{ v.personality }}}
+      {{ v.character.name }} {{ v.personality }}
     </label>
-  </div>
-  
-  <div>
-    {{ all_data }}
   </div>
 
 </template>
