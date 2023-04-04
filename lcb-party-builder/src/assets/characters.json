@@ -58,40 +58,48 @@
                 {
                     "name": "斬撃",
                     "text": "bbb",
-                    "emotion": "憤怒",
+                    "sin": "憤怒",
                     "target_number": 1,
                     "base_attack": 4,
                     "coin_number": 2,
                     "coin_attack": 2,
                     "coin_effect": [
-                        "[的中時]出血威力3",
-                        "[表面的中時]出血威力4"
+                        {
+                            "number": 1,
+                            "text": "[表面的中時]出血威力4"
+                        }
                     ],
                     "buff_debuff": [
                         "出血"
                     ]
                 }
             ],
-            "deffence" : {
+            "defence" : {
                 "name": "防御",
                 "text": "bbb",
                 "base_attack": 4,
                 "coin_number": 1,
                 "coin_attack": 8,
                 "coin_effect": [
-                    "[的中時]出血威力3",
-                    "[表面的中時]出血威力4"
+                    {
+                        "number": 1,
+                        "text": "次のターン、[保護]1を付与"
+                    }
                 ],
                 "buff_debuff": [
-                    "出血"
                 ]
+            },
+            "resistance": {
+                "slashing": 1,
+                "penetration": 0.5,
+                "blow": 2.0
             },
             "passive": {
                 "name": "パッシブ1",
                 "text": "aaa",
                 "trigger": [
                     {
-                        "emotion": "憤怒",
+                        "sin": "憤怒",
                         "number": 3
                     }
                 ],
@@ -104,7 +112,169 @@
                 "text": "aaa",
                 "trigger": [
                     {
-                        "emotion": "憤怒",
+                        "sin": "憤怒",
+                        "number": 3
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            }
+        },
+        {
+            "personality_id": 2,
+            "character_id": 1,
+            "name": "剣契 殺手",
+            "skill": [
+                {
+                    "name": "斬撃",
+                    "text": "bbb",
+                    "sin": "憤怒",
+                    "target_number": 1,
+                    "base_attack": 4,
+                    "coin_number": 2,
+                    "coin_attack": 2,
+                    "coin_effect": [
+                        {
+                            "number": 2,
+                            "text": "[表面的中時]出血威力4"
+                        }
+                    ],
+                    "buff_debuff": [
+                        "出血"
+                    ]
+                },
+                {
+                    "name": "貫通",
+                    "text": "bbb",
+                    "sin": "憤怒",
+                    "target_number": 1,
+                    "base_attack": 4,
+                    "coin_number": 2,
+                    "coin_attack": 2,
+                    "coin_effect": [
+                        {
+                            "number": 2,
+                            "text": "[表面的中時]出血威力4"
+                        }
+                    ],
+                    "buff_debuff": [
+                        "呼吸"
+                    ]
+                }
+            ],
+            "defence" : {
+                "name": "防御",
+                "text": "bbb",
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 8,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "次のターン、[保護]1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "保護"
+                ]
+            },
+            "resistance": {
+                "slashing": 1,
+                "penetration": 0.5,
+                "blow": 2.0
+            },
+            "passive": {
+                "name": "パッシブ1",
+                "text": "aaa",
+                "trigger": [
+                    {
+                        "sin": "憤怒",
+                        "number": 3
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            },
+            "support_passive": {
+                "name": "サポートパッシブ2",
+                "text": "aaa",
+                "trigger": [
+                    {
+                        "sin": "憤怒",
+                        "number": 3
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            }
+        },
+        {
+            "personality_id": 3,
+            "character_id": 2,
+            "name": "握る者",
+            "skill": [
+                {
+                    "name": "狂笑",
+                    "text": "ccc",
+                    "sin": "嫉妬",
+                    "target_number": 1,
+                    "base_attack": 4,
+                    "coin_number": 2,
+                    "coin_attack": 3,
+                    "coin_effect": [
+                        {
+                            "number": 1,
+                            "text": "[的中時]釘威力3\n[表面的中時]出血威力4"
+                        }
+                    ],
+                    "buff_debuff": [
+                        "釘"
+                    ]
+                }
+            ],
+            "defence" : {
+                "name": "防御",
+                "text": "bbb",
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 8,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "次のターン、[保護]1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "保護"
+                ]
+            },
+            "resistance": {
+                "slashing": 1,
+                "penetration": 0.5,
+                "blow": 2.0
+            },
+            "passive": {
+                "name": "パッシブ1",
+                "text": "aaa",
+                "trigger": [
+                    {
+                        "sin": "憤怒",
+                        "number": 3
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            },
+            "support_passive": {
+                "name": "サポートパッシブ2",
+                "text": "aaa",
+                "trigger": [
+                    {
+                        "sin": "憤怒",
                         "number": 3
                     }
                 ],
