@@ -111,7 +111,7 @@
                     "physics": "斬",
                     "attack_level": 28,
                     "target_number": 1,
-                    "base_attack": 5,
+                    "base_attack": 6,
                     "coin_number": 3,
                     "coin_attack": 1,
                     "coin_effect": [
