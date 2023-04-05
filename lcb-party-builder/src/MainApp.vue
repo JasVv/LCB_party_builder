@@ -13,9 +13,12 @@ interface CoinEffect {
 }
 
 interface Skill {
+  number: number,
   name: string;
   text: string;
   sin: string;
+  physics: string;
+  attack_level: number,
   target_number: number;
   base_attack: number;
   coin_number: number;
@@ -27,6 +30,7 @@ interface Skill {
 interface Defence {
   name: string;
   text: string;
+  defence_level: number,
   base_attack: number;
   coin_number: number;
   coin_attack: number;
@@ -49,6 +53,12 @@ interface Passive {
 interface Personality {
   personality_id: number;
   character_id: number;
+  rarity: number,
+  hp: number,
+  attack_level: number,
+  defence_level: number,
+  speed_min: number,
+  speed_max: number, 
   name: string;
   skill: Skill[];
   defence: Defence;

@@ -54,233 +54,120 @@
             "personality_id": 1,
             "character_id": 1,
             "name": "LCBの囚人",
+            "rarity": 1,
+            "hp" : 144,
+            "attack_level": 28,
+            "defence_level": 35,
+            "speed_min": 4,
+            "speed_max": 8, 
             "skill": [
                 {
-                    "name": "斬撃",
-                    "text": "bbb",
-                    "sin": "憤怒",
+                    "number": 3,
+                    "name": "弾く",
+                    "text": "",
+                    "sin": "憂鬱",
+                    "physics": "斬",
+                    "attack_level": 28,
                     "target_number": 1,
-                    "base_attack": 4,
-                    "coin_number": 2,
-                    "coin_attack": 2,
+                    "base_attack": 3,
+                    "coin_number": 1,
+                    "coin_attack": 7,
                     "coin_effect": [
                         {
                             "number": 1,
-                            "text": "[表面的中時]出血威力4"
+                            "text": "[表面的中時] 沈潜2を付与"
                         }
                     ],
                     "buff_debuff": [
-                        "出血",
-                        "振動"
-                    ]
-                }
-            ],
-            "defence" : {
-                "name": "防御",
-                "text": "bbb",
-                "base_attack": 4,
-                "coin_number": 1,
-                "coin_attack": 8,
-                "coin_effect": [
-                    {
-                        "number": 1,
-                        "text": "次のターン、[保護]1を付与"
-                    }
-                ],
-                "buff_debuff": [
-                ]
-            },
-            "resistance": {
-                "slashing": 1,
-                "penetration": 0.5,
-                "blow": 2.0
-            },
-            "passive": {
-                "name": "パッシブ1",
-                "text": "aaa",
-                "trigger": [
-                    {
-                        "sin": "憤怒",
-                        "number": 3
-                    }
-                ],
-                "buff_debuff": [
-                    "出血"
-                ]
-            },
-            "support_passive": {
-                "name": "サポートパッシブ2",
-                "text": "aaa",
-                "trigger": [
-                    {
-                        "sin": "憤怒",
-                        "number": 3
-                    }
-                ],
-                "buff_debuff": [
-                    "出血"
-                ]
-            }
-        },
-        {
-            "personality_id": 2,
-            "character_id": 1,
-            "name": "剣契 殺手",
-            "skill": [
-                {
-                    "name": "斬撃",
-                    "text": "bbb",
-                    "sin": "憤怒",
-                    "target_number": 1,
-                    "base_attack": 4,
-                    "coin_number": 2,
-                    "coin_attack": 2,
-                    "coin_effect": [
-                        {
-                            "number": 2,
-                            "text": "[表面的中時]出血威力4"
-                        }
-                    ],
-                    "buff_debuff": [
-                        "出血"
+                        "沈潜"
                     ]
                 },
                 {
-                    "name": "貫通",
-                    "text": "bbb",
-                    "sin": "憤怒",
+                    "number": 2,
+                    "name": "突き刺す",
+                    "text": "",
+                    "sin": "嫉妬",
+                    "physics": "貫",
+                    "attack_level": 28,
                     "target_number": 1,
                     "base_attack": 4,
                     "coin_number": 2,
-                    "coin_attack": 2,
+                    "coin_attack": 4,
                     "coin_effect": [
                         {
                             "number": 2,
-                            "text": "[表面的中時]出血威力4"
+                            "text": "[的中時] 沈潜回数が1追加。沈潜1を付与。"
                         }
                     ],
                     "buff_debuff": [
-                        "呼吸"
+                        "沈潜"
                     ]
-                }
-            ],
-            "defence" : {
-                "name": "防御",
-                "text": "bbb",
-                "base_attack": 4,
-                "coin_number": 1,
-                "coin_attack": 8,
-                "coin_effect": [
-                    {
-                        "number": 1,
-                        "text": "次のターン、[保護]1を付与"
-                    }
-                ],
-                "buff_debuff": [
-                    "保護"
-                ]
-            },
-            "resistance": {
-                "slashing": 1,
-                "penetration": 0.5,
-                "blow": 2.0
-            },
-            "passive": {
-                "name": "パッシブ1",
-                "text": "aaa",
-                "trigger": [
-                    {
-                        "sin": "憤怒",
-                        "number": 3
-                    }
-                ],
-                "buff_debuff": [
-                    "出血"
-                ]
-            },
-            "support_passive": {
-                "name": "サポートパッシブ2",
-                "text": "aaa",
-                "trigger": [
-                    {
-                        "sin": "憤怒",
-                        "number": 3
-                    }
-                ],
-                "buff_debuff": [
-                    "出血"
-                ]
-            }
-        },
-        {
-            "personality_id": 3,
-            "character_id": 2,
-            "name": "握る者",
-            "skill": [
+                },
                 {
-                    "name": "狂笑",
-                    "text": "ccc",
-                    "sin": "嫉妬",
+                    "number": 1,
+                    "name": "連撃",
+                    "text": "",
+                    "sin": "怠惰",
+                    "physics": "斬",
+                    "attack_level": 28,
                     "target_number": 1,
-                    "base_attack": 4,
-                    "coin_number": 2,
-                    "coin_attack": 3,
+                    "base_attack": 5,
+                    "coin_number": 3,
+                    "coin_attack": 1,
                     "coin_effect": [
                         {
-                            "number": 1,
-                            "text": "[的中時]釘威力3\n[表面的中時]出血威力4"
+                            "number": 3,
+                            "text": "[的中時] 対象の精神力が0未満なら次のターンに脆弱1を付与"
                         }
                     ],
                     "buff_debuff": [
-                        "釘"
+                        "脆弱"
                     ]
                 }
             ],
             "defence" : {
-                "name": "防御",
-                "text": "bbb",
-                "base_attack": 4,
+                "name": "ガード",
+                "text": "",
+                "defence_level": 36,
+                "base_attack": 7,
                 "coin_number": 1,
-                "coin_attack": 8,
+                "coin_attack": 3,
                 "coin_effect": [
-                    {
-                        "number": 1,
-                        "text": "次のターン、[保護]1を付与"
-                    }
+
                 ],
                 "buff_debuff": [
-                    "保護"
+
                 ]
             },
             "resistance": {
-                "slashing": 1,
+                "slashing": 2.0,
                 "penetration": 0.5,
-                "blow": 2.0
+                "blow": 1.0
             },
             "passive": {
-                "name": "パッシブ1",
-                "text": "aaa",
+                "name": "情報伝達",
+                "text": "操作パネルにて、自分より後ろの味方2名に[ダメージ量増加]1を付与",
                 "trigger": [
                     {
-                        "sin": "憤怒",
-                        "number": 3
+                        "sin": "憂鬱",
+                        "number": 4
                     }
                 ],
                 "buff_debuff": [
-                    "出血"
+                    "ダメージ量増加"
                 ]
             },
             "support_passive": {
-                "name": "サポートパッシブ2",
-                "text": "aaa",
+                "name": "情報中和",
+                "text": "精神力が最も低い味方1名が、このターンで精神力が減少した場合、ターン終了時に精神力を10回復する。",
                 "trigger": [
                     {
-                        "sin": "憤怒",
+                        "sin": "憂鬱",
                         "number": 3
                     }
                 ],
                 "buff_debuff": [
-                    "出血"
+                    "精神力回復"
                 ]
             }
         }
