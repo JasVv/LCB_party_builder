@@ -3,6 +3,10 @@
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
     "resolveJsonModule": true,
+    "target": "es2021",
+    "lib": [
+      "es2021"
+    ],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
