@@ -1,0 +1,127 @@
+[
+    {
+        "personality_id": 401,
+        "character_id": 4,
+        "name": "LCBの囚人",
+        "rarity": 1,
+        "hp" : 132,
+        "attack_level": 36,
+        "defence_level": 28,
+        "speed_min": 3,
+        "speed_max": 6, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 1.0,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "塗る",
+                "text": "",
+                "sin": "暴食",
+                "physics": "斬",
+                "attack_level": 36,
+                "target_number": 1,
+                "base_attack": 3,
+                "coin_number": 1,
+                "coin_attack": 7,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 次のターンに呼吸2を得る"
+                    }
+                ],
+                "buff_debuff": [
+                    "呼吸"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "ばら撒く",
+                "text": "",
+                "sin": "色欲",
+                "physics": "斬",
+                "attack_level": 36,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "対象がこのターンにダメージを受けた場合、ダメージ量+30%"
+                    },
+                    {
+                        "number": 2,
+                        "text": "対象がこのターンにダメージを受けた場合、ダメージ量+30%"
+                    }
+                ],
+                "buff_debuff": [
+                    
+                ]
+            },
+            {
+                "number": 1,
+                "name": "描き出す",
+                "text": "[戦闘開始時] 斬撃ダメージ量増加2を得る",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 36,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 3,
+                "coin_attack": 2,
+                "coin_effect": [
+
+                ],
+                "buff_debuff": [
+                    "斬撃ダメージ量増加"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "回避",
+            "text": "",
+            "defence_type": "回避",
+            "defence_level": 28,
+            "base_attack": 2,
+            "coin_number": 1,
+            "coin_attack": 10,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "無差別的芸術",
+            "text": "自分の被ダメージ量と与ダメージ量をそれぞれ+25%",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        },
+        "support_passive": {
+            "name": "背中を押す",
+            "text": "最大体力が最も低い味方1名の、与ダメージ量と被ダメージ量+20%",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        }
+    }
+]

@@ -1,75 +1,21 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
-import json_data from '@/assets/characters.json'
+import type Parsonality from './components/Parsonality.vue'
+import type Character from './components/Character.vue'
 
-interface Character {
-  character_id: number;
-  name: string;
-}
-
-interface CoinEffect {
-  number: number;
-  text: string;
-}
-
-interface Skill {
-  number: number,
-  name: string;
-  text: string;
-  sin: string;
-  physics: string;
-  attack_level: number,
-  target_number: number;
-  base_attack: number;
-  coin_number: number;
-  coin_attack: number;
-  coin_effect: CoinEffect[];
-  buff_debuff: string[];
-}
-
-interface Defence {
-  name: string;
-  text: string;
-  defence_level: number,
-  base_attack: number;
-  coin_number: number;
-  coin_attack: number;
-  coin_effect: CoinEffect[];
-  buff_debuff: string[];
-}
-
-interface PassiveTrigger {
-  sin: string;
-  number: number;
-}
-
-interface Passive {
-  name: string;
-  text: string;
-  trigger: PassiveTrigger[];
-  buff_debuff: string[];
-}
-
-interface Personality {
-  personality_id: number;
-  character_id: number;
-  rarity: number,
-  hp: number,
-  attack_level: number,
-  defence_level: number,
-  speed_min: number,
-  speed_max: number, 
-  name: string;
-  skill: Skill[];
-  defence: Defence;
-  resistance: {
-    slashing: number;
-    penetration: number;
-    blow: number;
-  };
-  passive: Passive;
-  support_passive: Passive;
-}
+import characters_json from '@/assets/characters.json'
+import parsonality_1_json from '@/assets/parsonality/character1.json'
+import parsonality_2_json from '@/assets/parsonality/character2.json'
+import parsonality_3_json from '@/assets/parsonality/character3.json'
+import parsonality_4_json from '@/assets/parsonality/character4.json'
+import parsonality_5_json from '@/assets/parsonality/character5.json'
+import parsonality_6_json from '@/assets/parsonality/character6.json'
+import parsonality_7_json from '@/assets/parsonality/character7.json'
+import parsonality_8_json from '@/assets/parsonality/character8.json'
+import parsonality_9_json from '@/assets/parsonality/character9.json'
+import parsonality_11_json from '@/assets/parsonality/character11.json'
+import parsonality_12_json from '@/assets/parsonality/character12.json'
+import parsonality_13_json from '@/assets/parsonality/character13.json'
 
 interface Data {
   character: Character[];
@@ -81,7 +27,23 @@ interface View {
   personality: Personality;
 }
 
-const all_data: Data = json_data
+const all_data: Data = {
+  character: characters_json,
+  personality: [
+    ...parsonality_1_json, 
+    ...parsonality_2_json, 
+    ...parsonality_3_json, 
+    ...parsonality_4_json, 
+    ...parsonality_5_json, 
+    ...parsonality_6_json, 
+    ...parsonality_7_json, 
+    ...parsonality_8_json, 
+    ...parsonality_9_json, 
+    ...parsonality_11_json, 
+    ...parsonality_12_json, 
+    ...parsonality_13_json, 
+  ]
+}
 
 const all_buff_debuff: string[] = Array.from(new Set(all_data.personality.flatMap(p => 
   [...p.skill.flatMap(v => v.buff_debuff), ...p.defence.buff_debuff, ...p.passive.buff_debuff, ...p.support_passive.buff_debuff]

@@ -1,175 +1,50 @@
-{
-    "character": [
-        {
-            "character_id": 1,
-            "name": "イサン"
-        },
-        {
-            "character_id": 2,
-            "name": "ファウスト"
-        },
-        {
-            "character_id": 3,
-            "name": "ドンキホーテ"
-        },
-        {
-            "character_id": 4,
-            "name": "良秀"
-        },
-        {
-            "character_id": 5,
-            "name": "ムルソー"
-        },
-        {
-            "character_id": 6,
-            "name": "ホンル"
-        },
-        {
-            "character_id": 7,
-            "name": "ヒースクリフ"
-        },
-        {
-            "character_id": 8,
-            "name": "イシュメール"
-        },
-        {
-            "character_id": 9,
-            "name": "ロージャ"
-        },
-        {
-            "character_id": 11,
-            "name": "シンクレア"
-        },
-        {
-            "character_id": 12,
-            "name": "ウーティス"
-        },
-        {
-            "character_id": 13,
-            "name": "グレゴール"
-        }
-    ],
-    "personality": [
-        {
-            "personality_id": 1,
-            "character_id": 1,
-            "name": "LCBの囚人",
-            "rarity": 1,
-            "hp" : 144,
-            "attack_level": 28,
-            "defence_level": 35,
-            "speed_min": 4,
-            "speed_max": 8, 
-            "skill": [
-                {
-                    "number": 3,
-                    "name": "弾く",
-                    "text": "",
-                    "sin": "憂鬱",
-                    "physics": "斬",
-                    "attack_level": 28,
-                    "target_number": 1,
-                    "base_attack": 3,
-                    "coin_number": 1,
-                    "coin_attack": 7,
-                    "coin_effect": [
-                        {
-                            "number": 1,
-                            "text": "[表面的中時] 沈潜2を付与"
-                        }
-                    ],
-                    "buff_debuff": [
-                        "沈潜"
-                    ]
-                },
-                {
-                    "number": 2,
-                    "name": "突き刺す",
-                    "text": "",
-                    "sin": "嫉妬",
-                    "physics": "貫",
-                    "attack_level": 28,
-                    "target_number": 1,
-                    "base_attack": 4,
-                    "coin_number": 2,
-                    "coin_attack": 4,
-                    "coin_effect": [
-                        {
-                            "number": 2,
-                            "text": "[的中時] 沈潜回数が1追加。沈潜1を付与。"
-                        }
-                    ],
-                    "buff_debuff": [
-                        "沈潜"
-                    ]
-                },
-                {
-                    "number": 1,
-                    "name": "連撃",
-                    "text": "",
-                    "sin": "怠惰",
-                    "physics": "斬",
-                    "attack_level": 28,
-                    "target_number": 1,
-                    "base_attack": 6,
-                    "coin_number": 3,
-                    "coin_attack": 1,
-                    "coin_effect": [
-                        {
-                            "number": 3,
-                            "text": "[的中時] 対象の精神力が0未満なら次のターンに脆弱1を付与"
-                        }
-                    ],
-                    "buff_debuff": [
-                        "脆弱"
-                    ]
-                }
-            ],
-            "defence" : {
-                "name": "ガード",
-                "text": "",
-                "defence_level": 36,
-                "base_attack": 7,
-                "coin_number": 1,
-                "coin_attack": 3,
-                "coin_effect": [
-
-                ],
-                "buff_debuff": [
-
-                ]
-            },
-            "resistance": {
-                "slashing": 2.0,
-                "penetration": 0.5,
-                "blow": 1.0
-            },
-            "passive": {
-                "name": "情報伝達",
-                "text": "操作パネルにて、自分より後ろの味方2名に[ダメージ量増加]1を付与",
-                "trigger": [
-                    {
-                        "sin": "憂鬱",
-                        "number": 4
-                    }
-                ],
-                "buff_debuff": [
-                    "ダメージ量増加"
-                ]
-            },
-            "support_passive": {
-                "name": "情報中和",
-                "text": "精神力が最も低い味方1名が、このターンで精神力が減少した場合、ターン終了時に精神力を10回復する。",
-                "trigger": [
-                    {
-                        "sin": "憂鬱",
-                        "number": 3
-                    }
-                ],
-                "buff_debuff": [
-                    "精神力回復"
-                ]
-            }
-        }
-    ]
-}
+[
+    {
+        "character_id": 1,
+        "name": "イサン"
+    },
+    {
+        "character_id": 2,
+        "name": "ファウスト"
+    },
+    {
+        "character_id": 3,
+        "name": "ドンキホーテ"
+    },
+    {
+        "character_id": 4,
+        "name": "良秀"
+    },
+    {
+        "character_id": 5,
+        "name": "ムルソー"
+    },
+    {
+        "character_id": 6,
+        "name": "ホンル"
+    },
+    {
+        "character_id": 7,
+        "name": "ヒースクリフ"
+    },
+    {
+        "character_id": 8,
+        "name": "イシュメール"
+    },
+    {
+        "character_id": 9,
+        "name": "ロージャ"
+    },
+    {
+        "character_id": 11,
+        "name": "シンクレア"
+    },
+    {
+        "character_id": 12,
+        "name": "ウーティス"
+    },
+    {
+        "character_id": 13,
+        "name": "グレゴール"
+    }
+]
