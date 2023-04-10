@@ -123,5 +123,268 @@
                 "与ダメージ+"
             ]
         }
+    },
+    {
+        "personality_id": 402,
+        "character_id": 4,
+        "name": "セブン協会 6課",
+        "rarity": 2,
+        "hp" : 126,
+        "attack_level": 40,
+        "defence_level": 27,
+        "speed_min": 3,
+        "speed_max": 7, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 1.0,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "スラッシュ",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "打",
+                "attack_level": 40,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 破裂2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "破裂"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "アッパースラッシュ",
+                "text": "対象に斬撃脆弱がある場合、スキル威力+2\n[マッチ勝利時] 次のターンに攻撃威力増加1を得る",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 40,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 12,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 防御レベル減少1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "攻撃威力増加",
+                    "防御レベル減少"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "スワッシュ",
+                "text": "[マッチ勝利時] このスキルで付与する斬撃脆弱+2",
+                "sin": "暴食",
+                "physics": "斬",
+                "attack_level": 40,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 3,
+                "coin_attack": 5,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 次のターンに斬撃脆弱3を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "斬撃脆弱"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "反撃",
+            "text": "",
+            "sin": "暴食",
+            "physics": "斬",
+            "defence_type": "反撃",
+            "defence_level": 40,
+            "base_attack": 8,
+            "coin_number": 1,
+            "coin_attack": 4,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "はん・われ",
+            "text": "1ターンの間、斬撃による与ダメージ量+(暴食共鳴数÷2)%",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "斬撃与ダメージ+"
+            ]
+        },
+        "support_passive": {
+            "name": "アイスブレイク",
+            "text": "最大体力の最も低い味方1名の、破裂付与数+1",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "破裂"
+            ]
+        }
+    },
+    {
+        "personality_id": 403,
+        "character_id": 4,
+        "name": "黒雲会 若衆",
+        "rarity": 3,
+        "hp" : 146,
+        "attack_level": 38,
+        "defence_level": 30,
+        "speed_min": 3,
+        "speed_max": 6, 
+        "resistance": {
+            "slashing": 2.0,
+            "penetration": 0.5,
+            "blow": 1.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "発勁",
+                "text": "",
+                "sin": "暴食",
+                "physics": "貫",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 麻痺3を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "麻痺"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "後始末",
+                "text": "",
+                "sin": "傲慢",
+                "physics": "貫",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 2,
+                "coin_attack": 5,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 出血2を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[表面的中時] 出血回数が1増加\n[表面的中時] ダメージ量減少2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "出血",
+                    "ダメージ量減少"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "雲の撹乱",
+                "text": "",
+                "sin": "色欲",
+                "physics": "貫",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 8,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] 出血2を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 出血回数が3増加\n[的中時] 攻撃レベル減少3を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "出血",
+                    "攻撃レベル減少"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 31,
+            "base_attack": 10,
+            "coin_number": 1,
+            "coin_attack": 4,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "黒雲道",
+            "text": "出血が付与された敵を攻撃時、与ダメージ量+(色欲共鳴数)%",
+            "trigger": [
+                {
+                    "sin": "色欲",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        },
+        "support_passive": {
+            "name": "切り込み隊長",
+            "text": "速度が最も高い味方1名の、出血付与値+1",
+            "trigger": [
+                {
+                    "sin": "色欲",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "出血"
+            ]
+        }
     }
 ]

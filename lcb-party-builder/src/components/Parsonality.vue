@@ -24,6 +24,8 @@ interface Defence {
   text: string;
   defence_type: string;
   defence_level: number,
+  sin: string | undefined | null,
+  physics: string | undefined | null,
   base_attack: number;
   coin_number: number;
   coin_attack: number;

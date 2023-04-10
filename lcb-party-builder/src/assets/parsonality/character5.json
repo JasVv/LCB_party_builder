@@ -1,3 +1,566 @@
 [
-    
+    {
+        "personality_id": 501,
+        "character_id": 5,
+        "name": "LCBの囚人",
+        "rarity": 1,
+        "hp" : 180,
+        "attack_level": 26,
+        "defence_level": 38,
+        "speed_min": 2,
+        "speed_max": 3, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 2.0,
+            "blow": 0.5
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "ワン、ツー",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "打",
+                "attack_level": 26,
+                "target_number": 1,
+                "base_attack": 2,
+                "coin_number": 3,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 振動1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 振動1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "振動"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "突き立てる拳",
+                "text": "[使用時]次のターンに守備威力増加3を得る",
+                "sin": "傲慢",
+                "physics": "打",
+                "attack_level": 26,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 1,
+                "coin_attack": 8,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 振動爆発"
+                    }
+                ],
+                "buff_debuff": [
+                    "守備威力増加",
+                    "振動爆発"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "連撃",
+                "text": "[使用時] 次のターンに保護3を得る",
+                "sin": "憂鬱",
+                "physics": "打",
+                "attack_level": 26,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 4,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 4,
+                        "text": "[表面的中時] 振動回数が2増加"
+                    }
+                ],
+                "buff_debuff": [
+                    "保護",
+                    "振動"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 38,
+            "base_attack": 5,
+            "coin_number": 1,
+            "coin_attack": 3,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "覚悟",
+            "text": "戦闘開始時、自分の体力が50%未満なら保護1を得る",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "保護"
+            ]
+        },
+        "support_passive": {
+            "name": "背中を支える",
+            "text": "最大体力が最も高い味方1名の、攻撃スキルによるダメージ量+10",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        }
+    },
+    {
+        "personality_id": 502,
+        "character_id": 5,
+        "name": "リウ協会 6課",
+        "rarity": 2,
+        "hp" : 164,
+        "attack_level": 34,
+        "defence_level": 32,
+        "speed_min": 2,
+        "speed_max": 5, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 0.5,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "突破",
+                "text": "",
+                "sin": "色欲",
+                "physics": "打",
+                "attack_level": 34,
+                "target_number": 1,
+                "base_attack": 3,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 火傷1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 火傷1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "火傷"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "震脚",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "打",
+                "attack_level": 34,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 2,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 火傷2を付与\n[的中時]対象の火傷が6以上のとき、ランダムな敵2名に火傷2を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 火傷1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "火傷"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "練武崩拳",
+                "text": "",
+                "sin": "憤怒",
+                "physics": "打",
+                "attack_level": 34,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 2,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] 火傷3を付与"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時] 火傷回数が3増加\n[的中時] 対象の火傷が6以上のとき、ランダムな敵2名に火傷3を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "火傷"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 32,
+            "base_attack": 8,
+            "coin_number": 1,
+            "coin_attack": 5,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "泰山",
+            "text": "被ダメージ時、ランダムな対象に火傷1を付与。ターン毎に（色欲共鳴数÷2）回発動可能",
+            "trigger": [
+                {
+                    "sin": "色欲",
+                    "active_type": "共鳴",
+                    "number": 2
+                }
+            ],
+            "buff_debuff": [
+                "火傷"
+            ]
+        },
+        "support_passive": {
+            "name": "摩擦打撃点",
+            "text": "速度が最も低い味方1名の、火傷付与値+1",
+            "trigger": [
+                {
+                    "sin": "色欲",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "火傷"
+            ]
+        }
+    },
+    {
+        "personality_id": 503,
+        "character_id": 5,
+        "name": "W社 整理要員",
+        "rarity": 3,
+        "hp" : 161,
+        "attack_level": 30,
+        "defence_level": 39,
+        "speed_min": 4,
+        "speed_max": 8, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 0.5,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "切断",
+                "text": "[使用時]斬撃保護2を得る",
+                "sin": "嫉妬",
+                "physics": "斬",
+                "attack_level": 30,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時]自分の充電回数が3増加"
+                    }
+                ],
+                "buff_debuff": [
+                    "充電",
+                    "斬撃保護"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "エネルギー循環",
+                "text": "",
+                "sin": "憂鬱",
+                "physics": "斬",
+                "attack_level": 30,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 3,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時]破裂1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[表面的中時]破裂1を付与"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時]破裂2/3を付与\n[的中時]充電回数を3消耗し、斬撃脆弱2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "破裂",
+                    "斬撃脆弱"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "エネルギー交流",
+                "text": "",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 30,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 4,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時]充電回数を2消耗し、防御減少1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時]充電回数を2消耗し、防御減少1を付与"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時]充電回数を2消耗し、防御減少1を付与"
+                    },
+                    {
+                        "number": 4,
+                        "text": "[的中時]充電回数を2消耗し、防御減少1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "防御減少"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "ガード",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 39,
+            "base_attack": 12,
+            "coin_number": 1,
+            "coin_attack": 3,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "耐え抜く",
+            "text": "被ダメージ時、充電回数が1増加 ターン毎に(嫉妬共鳴数÷2)回発動可能",
+            "trigger": [
+                {
+                    "sin": "嫉妬",
+                    "active_type": "共鳴",
+                    "number": 2
+                }
+            ],
+            "buff_debuff": [
+                "充電"
+            ]
+        },
+        "support_passive": {
+            "name": "黙々",
+            "text": "速度が最も低い味方1名の、破裂付与値+1",
+            "trigger": [
+                {
+                    "sin": "嫉妬",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "破裂"
+            ]
+        }
+    },
+    {
+        "personality_id": 504,
+        "character_id": 5,
+        "name": "N社 大鎚",
+        "rarity": 3,
+        "hp" : 198,
+        "attack_level": 32,
+        "defence_level": 42,
+        "speed_min": 3,
+        "speed_max": 5, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 0.5,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "貫く",
+                "text": "[使用時]斬撃保護2を得る",
+                "sin": "怠惰",
+                "physics": "貫",
+                "attack_level": 32,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 2,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] ダメージ量の60%混乱区間を後退"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] ダメージ量の60%混乱区間を後退"
+                    }
+                ],
+                "buff_debuff": [
+                    "混乱区間後退"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "罪を洗い流さん",
+                "text": "",
+                "sin": "憤怒",
+                "physics": "打",
+                "attack_level": 32,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 2,
+                "coin_attack": 3,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 釘3を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 次のターンに束縛3を付与\n[的中時] 対象の釘が5本以上なら、次のターンに束縛2、攻撃威力減少1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "釘",
+                    "束縛",
+                    "攻撃威力減少"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "異端抹殺",
+                "text": "",
+                "sin": "傲慢",
+                "physics": "貫",
+                "attack_level": 32,
+                "target_number": 1,
+                "base_attack": 8,
+                "coin_number": 2,
+                "coin_attack": 3,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 次のターンに釘2を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] ダメージ量の50%分体力を回復。"
+                    }
+                ],
+                "buff_debuff": [
+                    "釘",
+                    "体力回復"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "愚かなり･･･！",
+            "text": "[戦闘開始時] 保護1を得る\n体力が50%未満なら最終威力+2",
+            "sin": "憤怒",
+            "physics": "貫",
+            "defence_type": "反撃",
+            "defence_level": 32,
+            "base_attack": 15,
+            "coin_number": 1,
+            "coin_attack": -5,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                "保護"
+            ]
+        },
+        "passive": {
+            "name": "執念の金槌",
+            "text": "戦闘開始時、体力が50%未満なら自分に付与されたマイナス効果の内1つを除去し、狂信1、攻撃威力増加1、保護3を得る",
+            "trigger": [
+                {
+                    "sin": "憤怒",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "デバフ除去",
+                "狂信",
+                "攻撃威力増加",
+                "保護"
+            ]
+        },
+        "support_passive": {
+            "name": "至高の栄光",
+            "text": "現在の体力が最も低い味方1名の体力が50%未満なら、攻撃威力増加1、保護1を得る。対象がN社の狂信者なら狂信1を追加で得る",
+            "trigger": [
+                {
+                    "sin": "憤怒",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "攻撃威力増加",
+                "保護",
+                "狂信"
+            ]
+        }
+    }
 ]

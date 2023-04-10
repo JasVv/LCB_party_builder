@@ -1,3 +1,406 @@
 [
-    
+    {
+        "personality_id": 601,
+        "character_id": 6,
+        "name": "LCBの囚人",
+        "rarity": 1,
+        "hp" : 132,
+        "attack_level": 36,
+        "defence_level": 28,
+        "speed_min": 3,
+        "speed_max": 6, 
+        "resistance": {
+            "slashing": 2.0,
+            "penetration": 1.0,
+            "blow": 0.5
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "縦斬り",
+                "text": "",
+                "sin": "傲慢",
+                "physics": "打",
+                "attack_level": 36,
+                "target_number": 1,
+                "base_attack": 3,
+                "coin_number": 1,
+                "coin_attack": 7,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 沈潜2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "沈潜"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "二連撃",
+                "text": "前のターンにて、ダメージを受けていなければコイン威力+1",
+                "sin": "怠惰",
+                "physics": "斬",
+                "attack_level": 36,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 沈潜1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 破裂2を付与。"
+                    }
+                ],
+                "buff_debuff": [
+                    "沈潜",
+                    "破裂"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "旋風",
+                "text": "前のターンにて、ダメージを受けていなければコイン威力+2",
+                "sin": "色欲",
+                "physics": "打",
+                "attack_level": 36,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 2,
+                        "text": "[表面的中時] 攻撃威力減少2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "攻撃威力減少"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "回避",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "回避",
+            "defence_level": 38,
+            "base_attack": 2,
+            "coin_number": 1,
+            "coin_attack": 10,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "遊戯",
+            "text": "次のターン開始時、精神力を6回復",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "精神力回復"
+            ]
+        },
+        "support_passive": {
+            "name": "馬鹿げた冗談",
+            "text": "戦闘開始時、精神力の最も低い味方1名の精神力が6回復",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "精神力回復"
+            ]
+        }
+    },
+    {
+        "personality_id": 602,
+        "character_id": 6,
+        "name": "黒雲会 組員",
+        "rarity": 2,
+        "hp" : 154,
+        "attack_level": 32,
+        "defence_level": 35,
+        "speed_min": 3,
+        "speed_max": 7, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 1.0,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "切り払う",
+                "text": "",
+                "sin": "色欲",
+                "physics": "斬",
+                "attack_level": 32,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 出血2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "雲の切開",
+                "text": "[攻撃前] 対象の出血回数が4未満なら、スキルの1,2コインが追加される",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 32,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 出血1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 出血2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "雲の破裂",
+                "text": "[戦闘開始時] このスキルで付与する出血、麻痺1を追加付与",
+                "sin": "怠惰",
+                "physics": "斬",
+                "attack_level": 32,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 3,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] 出血2を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[表面的中時] 出血2を付与"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時] 麻痺5を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "出血",
+                    "麻痺"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 35,
+            "base_attack": 9,
+            "coin_number": 1,
+            "coin_attack": 3,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "黒雲道",
+            "text": "繋いだ罪のうち、最後の罪の最終コインで攻撃するとき(色欲共鳴数÷3)だけ出血を付与",
+            "trigger": [
+                {
+                    "sin": "色欲",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "出血"
+            ]
+        },
+        "support_passive": {
+            "name": "組織の報復",
+            "text": "速度が最も高い味方1名の、出血付与値+1",
+            "trigger": [
+                {
+                    "sin": "色欲",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "出血"
+            ]
+        }
+    },
+    {
+        "personality_id": 603,
+        "character_id": 6,
+        "name": "ぽんぽん派 ボス",
+        "rarity": 3,
+        "hp" : 151,
+        "attack_level": 38,
+        "defence_level": 34,
+        "speed_min": 3,
+        "speed_max": 6, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 1.0,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "首を切る",
+                "text": "",
+                "sin": "嫉妬",
+                "physics": "斬",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時]出血4 を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "出血"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "抉る",
+                "text": "",
+                "sin": "色欲",
+                "physics": "貫",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 3,
+                "coin_number": 3,
+                "coin_attack": 5,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時]追加ダメージ+3"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[表面的中時]追加ダメージ+3"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[表面的中時]敵の体力が25%未満のとき、対象が生存状態ならこのコインを1回再使用\n表面が出ると、このコインによるダメージ量+50%\n[再使用表面的中時]このコインによるスキルダメージ量+50%"
+                    }
+                ],
+                "buff_debuff": [
+                    
+                ]
+            },
+            {
+                "number": 1,
+                "name": "滅多切り",
+                "text": "[敵討伐時]このスキルを1回再使用",
+                "sin": "暴食",
+                "physics": "斬",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 1,
+                "coin_attack": 25,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時]追加ダメージ+7\n[再使用表面的中時]このコインによるスキルダメージ量+100%"
+                    }
+                ],
+                "buff_debuff": [
+                    
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "回避",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "回避",
+            "defence_level": 35,
+            "base_attack": 2,
+            "coin_number": 1,
+            "coin_attack": 14,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "愉悦",
+            "text": "次のターン開始時、(暴食共鳴数×2)だけ精神力を回復",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "精神力回復"
+            ]
+        },
+        "support_passive": {
+            "name": "決め手",
+            "text": "精神力が最も高い味方1名の、表面が出たコインのダメージ量+20%",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        }
+    }
 ]
