@@ -2,47 +2,11 @@
 import { ref, type Ref } from 'vue'
 import type { Personality } from './components/Parsonality.vue'
 import type { Character } from './components/Character.vue'
-
-import characters_json from '@/assets/characters.json'
-import parsonality_1_json from '@/assets/parsonality/character1.json'
-import parsonality_2_json from '@/assets/parsonality/character2.json'
-import parsonality_3_json from '@/assets/parsonality/character3.json'
-import parsonality_4_json from '@/assets/parsonality/character4.json'
-import parsonality_5_json from '@/assets/parsonality/character5.json'
-import parsonality_6_json from '@/assets/parsonality/character6.json'
-import parsonality_7_json from '@/assets/parsonality/character7.json'
-import parsonality_8_json from '@/assets/parsonality/character8.json'
-import parsonality_9_json from '@/assets/parsonality/character9.json'
-import parsonality_11_json from '@/assets/parsonality/character11.json'
-import parsonality_12_json from '@/assets/parsonality/character12.json'
-import parsonality_13_json from '@/assets/parsonality/character13.json'
-
-interface Data {
-  character: Character[];
-  personality: Personality[];
-}
+import {all_data} from './components/javascript/all_data'
 
 interface View {
   character: Character;
   personality: Personality;
-}
-
-const all_data: Data = {
-  character: characters_json,
-  personality: [
-    ...parsonality_1_json, 
-    ...parsonality_2_json, 
-    ...parsonality_3_json, 
-    ...parsonality_4_json, 
-    ...parsonality_5_json, 
-    ...parsonality_6_json, 
-    ...parsonality_7_json, 
-    ...parsonality_8_json, 
-    ...parsonality_9_json, 
-    ...parsonality_11_json, 
-    ...parsonality_12_json, 
-    ...parsonality_13_json, 
-  ]
 }
 
 const all_buff_debuff: string[] = Array.from(new Set(all_data.personality.flatMap(p => 
@@ -117,18 +81,12 @@ function recalculate() {
       return view
     })
     .sort((a, b) => {
-      if (a.character.character_id < b.character.character_id) {
+      if (a.personality.personality_id < b.personality.personality_id) {
         return -1
-      } else if (a.character.character_id > b.character.character_id) {
+      } else if (a.personality.personality_id > b.personality.personality_id) {
         return 1
       } else {
-        if (a.personality.personality_id < b.personality.personality_id) {
-          return -1
-        } else if (a.personality.personality_id > b.personality.personality_id) {
-          return 1
-        } else {
-          return 0
-        }
+        return 0
       }
     })
 
@@ -224,32 +182,33 @@ function selectSinColorCss(sin: string) {
     </div>
 
     <div class="result">
-      <hr>
 
       <table class="personality_table">
 
         <tr>
-          <th>人格</th> 
-          <th>スキル1</th> 
-          <th>スキル2</th> 
-          <th>スキル3</th> 
-          <th>斬</th> 
-          <th>貫</th> 
-          <th>打</th> 
-          <th>速度</th>
+          <th></th>
+          <th colspan="2" class="name_width">人格</th> 
+          <th class="skill_width">スキル1</th> 
+          <th class="skill_width">スキル2</th> 
+          <th class="skill_width">スキル3</th> 
+          <th class="resistance_width">斬</th> 
+          <th class="resistance_width">貫</th> 
+          <th class="resistance_width">打</th> 
+          <th class="speed_width">速度</th>
         </tr>
 
         <template v-for="v in data.view" :key="v.personality.personality_id">
           <tr>
-            <td>【{{ v.personality.name }}】{{ v.character.name }}</td> 
+            <td rowspan="4"></td>
+            <td colspan="2">【{{ v.personality.name }}】{{ v.character.name }}</td> 
             <td :class="selectSinColorCss(v.personality.skill[0]?.sin)">
-              {{ v.personality.skill[0] ? `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` : ""  }}
+              {{ v.personality.skill[0] ? `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack >= 0 ? `+${v.personality.skill[0].coin_attack}` : v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` : ""  }}
             </td> 
             <td :class="selectSinColorCss(v.personality.skill[1]?.sin)">
-              {{ v.personality.skill[1] ? `${v.personality.skill[1].physics}${v.personality.skill[1].base_attack + (v.personality.skill[1].coin_attack * v.personality.skill[1].coin_number)} (${v.personality.skill[1].base_attack}, ${v.personality.skill[1].coin_attack} * ${v.personality.skill[1].coin_number})` : ""  }}
+              {{ v.personality.skill[1] ? `${v.personality.skill[1].physics}${v.personality.skill[1].base_attack + (v.personality.skill[1].coin_attack * v.personality.skill[1].coin_number)} (${v.personality.skill[1].base_attack}, ${v.personality.skill[1].coin_attack >= 0 ? `+${v.personality.skill[1].coin_attack}` : v.personality.skill[1].coin_attack} * ${v.personality.skill[1].coin_number})` : ""  }}
             </td> 
             <td :class="selectSinColorCss(v.personality.skill[2]?.sin)">
-              {{ v.personality.skill[2] ? `${v.personality.skill[2].physics}${v.personality.skill[2].base_attack + (v.personality.skill[2].coin_attack * v.personality.skill[2].coin_number)} (${v.personality.skill[2].base_attack}, ${v.personality.skill[2].coin_attack} * ${v.personality.skill[2].coin_number})` : ""  }}
+              {{ v.personality.skill[2] ? `${v.personality.skill[2].physics}${v.personality.skill[2].base_attack + (v.personality.skill[2].coin_attack * v.personality.skill[2].coin_number)} (${v.personality.skill[2].base_attack}, ${v.personality.skill[2].coin_attack >= 0 ? `+${v.personality.skill[2].coin_attack}` : v.personality.skill[2].coin_attack} * ${v.personality.skill[2].coin_number})` : ""  }}
             </td> 
             <td>{{ v.personality.resistance.slashing }}</td>
             <td>{{ v.personality.resistance.penetration }}</td> 
@@ -266,7 +225,7 @@ function selectSinColorCss(sin: string) {
                 </label>
               </template>
             </td>
-            <td colspan=6>
+            <td colspan=7>
               {{ v.personality.passive.text }}
             </td>
           </tr>
@@ -280,15 +239,28 @@ function selectSinColorCss(sin: string) {
                 </label>
               </template>
             </td>
-            <td colspan=6>
+            <td colspan=7>
               {{ v.personality.support_passive.text }}
             </td>
           </tr>
           <tr>
-            <td colspan=8>
+            <td colspan=9>
               <details>
-                <summary>スキル詳細</summary>
-                ここに詳細を出す
+                <summary>
+                  <span class="detail_close">スキル詳細</span>
+                </summary>
+                <div>
+                  {{ v.personality.skill[0].name }}
+                  <label td :class="selectSinColorCss(v.personality.skill[0].sin)">
+                    {{ `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack >= 0 ? `+${v.personality.skill[0].coin_attack}` : v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` }}
+                  </label>
+                  <label>
+                    {{ v.personality.skill[0].text }}
+                  </label>
+                  <label v-for="(coin_effect, idx) in v.personality.skill[0].coin_effect" :key="idx">
+                    {{ coin_effect.number }} {{ coin_effect.text }}
+                  </label>
+                </div>
               </details>
             </td>
           </tr>
