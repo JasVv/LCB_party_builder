@@ -1,3 +1,423 @@
 [
+    {
+        "personality_id": 1301,
+        "character_id": 13,
+        "name": "LCBの囚人",
+        "rarity": 1,
+        "hp" : 144,
+        "attack_level": 31,
+        "defence_level": 32,
+        "speed_min": 3,
+        "speed_max": 7, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 0.5,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "斬る",
+                "text": "",
+                "sin": "憂鬱",
+                "physics": "斬",
+                "attack_level": 31,
+                "target_number": 1,
+                "base_attack": 3,
+                "coin_number": 1,
+                "coin_attack": 7,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] 破裂4を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "破裂"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "抉る",
+                "text": "",
+                "sin": "暴食",
+                "physics": "貫",
+                "attack_level": 31,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 10,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 破裂回数が1増加。\n[表面的中時] 貫通脆弱1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "破裂",
+                    "貫通脆弱"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "切り刻む",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "貫",
+                "attack_level": 31,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 対象に破裂がある場合、ダメージ量+10%"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 対象に破裂がある場合、ダメージ量+10%\n[表面的中時] ダメージ量の30%分体力を回復。"
+                    }
+                ],
+                "buff_debuff": [
+                    "体力回復"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 32,
+            "base_attack": 5,
+            "coin_number": 1,
+            "coin_attack": 3,
+            "coin_effect": [
 
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "強制生存",
+            "text": "戦闘開始時、自分の体力を5回復",
+            "trigger": [
+                {
+                    "sin": "憂鬱",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "体力回復"
+            ]
+        },
+        "support_passive": {
+            "name": "因子コードG-0",
+            "text": "戦闘開始時、現在の体力が最も低い味方1名の体力が5回復",
+            "trigger": [
+                {
+                    "sin": "憂鬱",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "体力回復"
+            ]
+        }
+    },
+    {
+        "personality_id": 1302,
+        "character_id": 13,
+        "name": "リウ協会 6課",
+        "rarity": 2,
+        "hp" : 126,
+        "attack_level": 40,
+        "defence_level": 27,
+        "speed_min": 3,
+        "speed_max": 7, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 2.0,
+            "blow": 0.5
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "一点突き",
+                "text": "",
+                "sin": "憤怒",
+                "physics": "打",
+                "attack_level": 40,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 2,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 火傷1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 火傷1を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "火傷"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "一網打尽",
+                "text": "",
+                "sin": "色欲",
+                "physics": "打",
+                "attack_level": 40,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 3,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] 火傷1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[表面的中時] 火傷1を付与"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時] 火傷3を付与\n[的中時] 対象の火傷が6以上のとき、次のターンに攻撃威力増加1を得る"
+                    }
+                ],
+                "buff_debuff": [
+                    "火傷",
+                    "攻撃威力増加"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "練武掌打",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "打",
+                "attack_level": 40,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 4,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] 火傷1を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[表面的中時] 火傷1を付与"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[表面的中時] 火傷1を付与"
+                    },
+                    {
+                        "number": 4,
+                        "text": "[的中時] 火傷3を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "火傷"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 32,
+            "base_attack": 8,
+            "coin_number": 1,
+            "coin_attack": 5,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "発火",
+            "text": "スキルの3番目以降のコインが的中時、火傷を(怠惰共鳴数÷3)だけ付与",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 2
+                }
+            ],
+            "buff_debuff": [
+                "火傷"
+            ]
+        },
+        "support_passive": {
+            "name": "ひた走る心",
+            "text": "速度が最も低い味方1名の、3番目以降のコインからダメージ量+30%",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        }
+    },
+    {
+        "personality_id": 1303,
+        "character_id": 13,
+        "name": "G社課長 代理",
+        "rarity": 3,
+        "hp" : 132,
+        "attack_level": 41,
+        "defence_level": 28,
+        "speed_min": 3,
+        "speed_max": 7, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 0.5,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "切り払う",
+                "text": "[マッチ勝利時] ダメージ量+40％",
+                "sin": "暴食",
+                "physics": "斬",
+                "attack_level": 41,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 2,
+                "coin_attack": 3,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] ダメージ量の50％分体力を回復。"
+                    }
+                ],
+                "buff_debuff": [
+                    "体力回復"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "四肢切断",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "斬",
+                "attack_level": 41,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 1,
+                "coin_attack": 10,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 破裂5を付与\n[表面的中時] ダメージ量の50％分体力を回復。"
+                    }
+                ],
+                "buff_debuff": [
+                    "体力回復",
+                    "破裂"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "内臓抉り",
+                "text": "",
+                "sin": "色欲",
+                "physics": "貫",
+                "attack_level": 41,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 4,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 対処に破裂があるとき、与ダメージ量30％分の追加ダメージを与える"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 対処に破裂があるとき、与ダメージ量30％分の追加ダメージを与える"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時] 対処に破裂があるとき、与ダメージ量30％分の追加ダメージを与える"
+                    },
+                    {
+                        "number": 4,
+                        "text": "[表面的中時] ダメージ量の100％分体力を回復。"
+                    }
+                ],
+                "buff_debuff": [
+                    "体力回復"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 28,
+            "base_attack": 10,
+            "coin_number": 1,
+            "coin_attack": 4,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "緊急食糧補給",
+            "text": "体力が25％未満なら、マッチ勝利時に(暴食共鳴数÷3)％体力を回復",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 2
+                }
+            ],
+            "buff_debuff": [
+                "体力回復"
+            ]
+        },
+        "support_passive": {
+            "name": "因子コードG-3",
+            "text": "現在の体力が最も低い味方1名がマッチ勝利時、体力を5回復",
+            "trigger": [
+                {
+                    "sin": "暴食",
+                    "active_type": "共鳴",
+                    "number": 5
+                }
+            ],
+            "buff_debuff": [
+                "体力回復"
+            ]
+        }
+    }
 ]

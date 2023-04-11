@@ -1,3 +1,386 @@
 [
-    
+    {
+        "personality_id": 1201,
+        "character_id": 12,
+        "name": "LCBの囚人",
+        "rarity": 1,
+        "hp" : 120,
+        "attack_level": 38,
+        "defence_level": 25,
+        "speed_min": 3,
+        "speed_max": 7, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 1.0,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "抜剣",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "貫",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 3,
+                "coin_number": 3,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 破裂2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "破裂"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "背後切り",
+                "text": "",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "対象より速度が速ければ、ダメージ量+20%"
+                    },
+                    {
+                        "number": 2,
+                        "text": "対象より速度が速ければ、ダメージ量+20%"
+                    }
+                ],
+                "buff_debuff": [
+                    
+                ]
+            },
+            {
+                "number": 1,
+                "name": "突き抜く",
+                "text": "対象の体力が50%以上のとき、ダメージ量+20%",
+                "sin": "憂鬱",
+                "physics": "貫",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 1,
+                "coin_attack": 14,
+                "coin_effect": [
+
+                ],
+                "buff_debuff": [
+                    
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "回避",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "回避",
+            "defence_level": 25,
+            "base_attack": 2,
+            "coin_number": 1,
+            "coin_attack": 10,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "処刑",
+            "text": "対象の精神力が0未満のとき、与ダメージ量+10%",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        },
+        "support_passive": {
+            "name": "軍人魂",
+            "text": "現在の体力が最も高い味方1名が、精神力が0未満の敵を攻撃時に与ダメージ量+30%",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        }
+    },
+    {
+        "personality_id": 1202,
+        "character_id": 12,
+        "name": "剣契 組織員",
+        "rarity": 2,
+        "hp" : 164,
+        "attack_level": 34,
+        "defence_level": 32,
+        "speed_min": 2,
+        "speed_max": 5, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 2.0,
+            "blow": 1.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "抜剣",
+                "text": "",
+                "sin": "憤怒",
+                "physics": "斬",
+                "attack_level": 34,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時]呼吸4を得る"
+                    }
+                ],
+                "buff_debuff": [
+                    "呼吸"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "刺法",
+                "text": "[マッチ勝利時]自分の呼吸回数が1増加",
+                "sin": "色欲",
+                "physics": "貫",
+                "attack_level": 34,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 2,
+                        "text": "[表面的中時]次のターンに斬撃ダメージ量増加2を得る"
+                    }
+                ],
+                "buff_debuff": [
+                    "呼吸",
+                    "斬撃ダメージ量増加"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "腰撃勢",
+                "text": "対象の体力が25％未満のとき、最終威力+2",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 34,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 2,
+                "coin_attack": 4,
+                "coin_effect": [
+                    {
+                        "number": 2,
+                        "text": "[クリティカル的中時]ダメージ量の20%分、最初の混乱区間を前進"
+                    }
+                ],
+                "buff_debuff": [
+                    "混乱区間前進"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "回避",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "回避",
+            "defence_level": 33,
+            "base_attack": 3,
+            "coin_number": 1,
+            "coin_attack": 10,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "冷静",
+            "text": "体力が25%未満の敵を攻撃時､与ダメージ量+(傲慢共鳴数×2)%",
+            "trigger": [
+                {
+                    "sin": "傲慢",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        },
+        "support_passive": {
+            "name": "死亡確認射撃",
+            "text": "精神力が最も高い味方1名が、精神力が25未満の敵を攻撃時に与ダメージ量+30%",
+            "trigger": [
+                {
+                    "sin": "傲慢",
+                    "active_type": "共鳴",
+                    "number": 4
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        }
+    },
+    {
+        "personality_id": 1203,
+        "character_id": 12,
+        "name": "G社 部長",
+        "rarity": 2,
+        "hp" : 151,
+        "attack_level": 29,
+        "defence_level": 37,
+        "speed_min": 4,
+        "speed_max": 8, 
+        "resistance": {
+            "slashing": 1.0,
+            "penetration": 0.5,
+            "blow": 2.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "指揮",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "貫",
+                "attack_level": 29,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 速度が最も低い味方に、保護2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "保護"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "攻撃命令",
+                "text": "[使用時] 速度が最も低い味方に、攻撃威力増加1を付与",
+                "sin": "暴食",
+                "physics": "打",
+                "attack_level": 29,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 1,
+                "coin_attack": 10,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 速度が最も低い味方に、ダメージ量増加2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "攻撃威力増加",
+                    "ダメージ量増加"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "気合",
+                "text": "",
+                "sin": "憂鬱",
+                "physics": "打",
+                "attack_level": 29,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 1,
+                "coin_attack": 16,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 沈潜5を付与\n[的中時] 攻撃威力減少2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "沈潜",
+                    "攻撃威力減少"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 38,
+            "base_attack": 9,
+            "coin_number": 1,
+            "coin_attack": 4,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "士気高揚",
+            "text": "次のターン開始時、前のターンにて自分の両隣にいる味方と自分へクイック2を付与",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 2
+                }
+            ],
+            "buff_debuff": [
+                "クイック"
+            ]
+        },
+        "support_passive": {
+            "name": "覚悟",
+            "text": "現在の体力が最も高い味方1名が、戦闘開始時に守備威力増加1、攻撃威力増加1、保護1のうち一つをランダムで得る",
+            "trigger": [
+                {
+                    "sin": "怠惰",
+                    "active_type": "共鳴",
+                    "number": 5
+                }
+            ],
+            "buff_debuff": [
+                "守備威力増加",
+                "攻撃威力増加",
+                "保護"
+            ]
+        }
+    }
 ]

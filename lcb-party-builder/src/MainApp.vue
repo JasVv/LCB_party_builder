@@ -236,6 +236,7 @@ function selectSinColorCss(sin: string) {
           <th>斬</th> 
           <th>貫</th> 
           <th>打</th> 
+          <th>速度</th>
         </tr>
 
         <template v-for="v in data.view" :key="v.personality.personality_id">
@@ -253,11 +254,40 @@ function selectSinColorCss(sin: string) {
             <td>{{ v.personality.resistance.slashing }}</td>
             <td>{{ v.personality.resistance.penetration }}</td> 
             <td>{{ v.personality.resistance.blow }}</td> 
+            <td>{{ v.personality.speed_min }} ~ {{ v.personality.speed_max }}</td> 
           </tr>
           <tr>
-            <td colspan=7>
+            <td>パッシブ</td>
+            <td>
+              <template v-for="(trigger, idx) in v.parsonality.passive.trigger" :key="idx">
+                {{ `${trigger.active_type} ` }}
+                <label td :class="selectSinColorCss(trigger.sin)">
+                  {{ `${trigger.number} ` }}
+                </label>
+              </template>
+            </td>
+            <td colspan=6>
+              {{ v.parsonality.passive.text }}
+            </td>
+          </tr>
+          <tr>
+            <td>サポート</td>
+            <td>
+              <template v-for="(trigger, idx) in v.parsonality.support_passive.trigger" :key="idx">
+                {{ `${trigger.active_type} ` }}
+                <label td :class="selectSinColorCss(trigger.sin)">
+                  {{ `${trigger.number} ` }}
+                </label>
+              </template>
+            </td>
+            <td colspan=6>
+              {{ v.parsonality.support_passive.text }}
+            </td>
+          </tr>
+          <tr>
+            <td colspan=8>
               <details>
-                <summary>詳細</summary>
+                <summary>スキル詳細</summary>
                 ここに詳細を出す
               </details>
             </td>

@@ -1,3 +1,527 @@
 [
-    
+    {
+        "personality_id": 1101,
+        "character_id": 11,
+        "name": "LCBの囚人",
+        "rarity": 1,
+        "hp" : 120,
+        "attack_level": 38,
+        "defence_level": 25,
+        "speed_min": 3,
+        "speed_max": 7, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 2.0,
+            "blow": 1.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "縦斬り",
+                "text": "",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 3,
+                "coin_number": 1,
+                "coin_attack": 7,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 破裂2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "破裂"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "連続斬り",
+                "text": "[マッチ勝利時]ダメージ量+30%",
+                "sin": "憤怒",
+                "physics": "斬",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 3,
+                "coin_attack": 2,
+                "coin_effect": [
+
+                ],
+                "buff_debuff": [
+                    
+                ]
+            },
+            {
+                "number": 1,
+                "name": "掻き斬る",
+                "text": "[マッチ勝利時] 攻撃威力増加1を得る",
+                "sin": "嫉妬",
+                "physics": "斬",
+                "attack_level": 38,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 3,
+                "coin_attack": 2,
+                "coin_effect": [
+
+                ],
+                "buff_debuff": [
+                    "攻撃威力増加"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "反撃",
+            "text": "",
+            "sin": "傲慢",
+            "physics": "斬",
+            "defence_type": "反撃",
+            "defence_level": 38,
+            "base_attack": 4,
+            "coin_number": 1,
+            "coin_attack": 7,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "覚悟",
+            "text": "このターンで味方が死亡すると、次のターンに攻撃威力増加1を得る",
+            "trigger": [
+                {
+                    "sin": "傲慢",
+                    "active_type": "共鳴",
+                    "number": 2
+                }
+            ],
+            "buff_debuff": [
+                "攻撃威力増加"
+            ]
+        },
+        "support_passive": {
+            "name": "復讐心",
+            "text": "精神力が最も低い味方1名が、他の味方が死亡すると次のターンに攻撃威力増加1を得る",
+            "trigger": [
+                {
+                    "sin": "傲慢",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "攻撃威力増加"
+            ]
+        }
+    },
+    {
+        "personality_id": 1102,
+        "character_id": 11,
+        "name": "剣契 殺手",
+        "rarity": 3,
+        "hp" : 175,
+        "attack_level": 35,
+        "defence_level": 35,
+        "speed_min": 2,
+        "speed_max": 5, 
+        "resistance": {
+            "slashing": 0.5,
+            "penetration": 2.0,
+            "blow": 1.0
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "斬貫",
+                "text": "",
+                "sin": "暴食",
+                "physics": "貫",
+                "attack_level": 35,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 2,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 2,
+                        "text": "[的中時] 自分の呼吸回数が2増加"
+                    }
+                ],
+                "buff_debuff": [
+                    "呼吸"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "連斬",
+                "text": "[マッチ敗北] 次のターンに攻撃威力増加2を得る",
+                "sin": "憤怒",
+                "physics": "斬",
+                "attack_level": 35,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 3,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 呼吸2を得る"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 呼吸1を得る"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時] 呼吸1を得る"
+                    }
+                ],
+                "buff_debuff": [
+                    "呼吸",
+                    "攻撃威力増加"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "骨断",
+                "text": "",
+                "sin": "傲慢",
+                "physics": "斬",
+                "attack_level": 35,
+                "target_number": 1,
+                "base_attack": 8,
+                "coin_number": 1,
+                "coin_attack": 14,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 麻痺5を付与\n[的中時] 出血3を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "麻痺",
+                    "出血"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "反撃 - 初生",
+            "text": "[使用時] 次のターンにダメージ量増加1を得る",
+            "sin": "憤怒",
+            "physics": "貫",
+            "defence_type": "反撃",
+            "defence_level": 38,
+            "base_attack": 9,
+            "coin_number": 1,
+            "coin_attack": 6,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                "ダメージ量増加"
+            ]
+        },
+        "passive": {
+            "name": "殺手",
+            "text": "繋いだ罪の、最後の罪の最終コインの与ダメージ+(傲慢共鳴数x2)%",
+            "trigger": [
+                {
+                    "sin": "傲慢",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        },
+        "support_passive": {
+            "name": "血に濡れた手",
+            "text": "速度が最も低い味方1名の、最後のスキル最終威力+1",
+            "trigger": [
+                {
+                    "sin": "傲慢",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "スキル威力+"
+            ]
+        }
+    },
+    {
+        "personality_id": 1103,
+        "character_id": 11,
+        "name": "ツヴァイ協会 6課",
+        "rarity": 2,
+        "hp" : 176,
+        "attack_level": 29,
+        "defence_level": 37,
+        "speed_min": 2,
+        "speed_max": 4, 
+        "resistance": {
+            "slashing": 2.0,
+            "penetration": 1.0,
+            "blow": 0.5
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "打撃",
+                "text": "",
+                "sin": "憂鬱",
+                "physics": "打",
+                "attack_level": 29,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 1,
+                "coin_attack": 6,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時]振動2を付与。"
+                    }
+                ],
+                "buff_debuff": [
+                    "振動"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "制圧",
+                "text": "",
+                "sin": "憤怒",
+                "physics": "打",
+                "attack_level": 29,
+                "target_number": 1,
+                "base_attack": 6,
+                "coin_number": 2,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時]振動6を付与"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時]次のターンにダメージ量減少2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "振動",
+                    "ダメージ量減少"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "強打",
+                "text": "[使用時]現時点での最も体力が低い味方に保護1を付与",
+                "sin": "怠惰",
+                "physics": "打",
+                "attack_level": 29,
+                "target_number": 1,
+                "base_attack": 7,
+                "coin_number": 1,
+                "coin_attack": 13,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時]振動爆発\n[的中時]打撃脆弱2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "保護",
+                    "振動爆発",
+                    "打撃脆弱"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "防御",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "防御",
+            "defence_level": 38,
+            "base_attack": 10,
+            "coin_number": 1,
+            "coin_attack": 3,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "あなたの盾",
+            "text": "戦闘開始時、操作パネルにて自分の両隣にいる味方へ1ターン守備威力+2、保護1を付与",
+            "trigger": [
+                {
+                    "sin": "憂鬱",
+                    "active_type": "共鳴",
+                    "number": 2
+                }
+            ],
+            "buff_debuff": [
+                "守備威力増加",
+                "保護"
+            ]
+        },
+        "support_passive": {
+            "name": "馬鹿力",
+            "text": "現在の最も体力が低い味方の被ダメージ量-10%",
+            "trigger": [
+                {
+                    "sin": "憂鬱",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "被ダメージ-"
+            ]
+        }
+    },
+    {
+        "personality_id": 1104,
+        "character_id": 11,
+        "name": "マリアッチ ボス",
+        "rarity": 2,
+        "hp" : 190,
+        "attack_level": 27,
+        "defence_level": 40,
+        "speed_min": 2,
+        "speed_max": 3, 
+        "resistance": {
+            "slashing": 2.0,
+            "penetration": 1.0,
+            "blow": 0.5
+        },
+        "skill": [
+            {
+                "number": 3,
+                "name": "舞い",
+                "text": "",
+                "sin": "怠惰",
+                "physics": "打",
+                "attack_level": 27,
+                "target_number": 1,
+                "base_attack": 4,
+                "coin_number": 2,
+                "coin_attack": 2,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] 沈潜4を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "沈潜"
+                ]
+            },
+            {
+                "number": 2,
+                "name": "激情の踊り",
+                "text": "",
+                "sin": "嫉妬",
+                "physics": "打",
+                "attack_level": 27,
+                "target_number": 1,
+                "base_attack": 5,
+                "coin_number": 3,
+                "coin_attack": 1,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[的中時] 呼吸2を得る\n[表面的中時]自分の呼吸回数が1増加"
+                    },
+                    {
+                        "number": 2,
+                        "text": "[的中時] 沈潜2を付与\n[表面的中時]沈潜回数が1増加"
+                    },
+                    {
+                        "number": 3,
+                        "text": "[的中時] 沈潜2を付与"
+                    }
+                ],
+                "buff_debuff": [
+                    "呼吸",
+                    "沈潜"
+                ]
+            },
+            {
+                "number": 1,
+                "name": "パニャータパーティー",
+                "text": "対象の精神力が0未満なら、対象の精神力に比例してクリティカル発動確率増加",
+                "sin": "憂鬱",
+                "physics": "打",
+                "attack_level": 27,
+                "target_number": 1,
+                "base_attack": 8,
+                "coin_number": 1,
+                "coin_attack": 11,
+                "coin_effect": [
+                    {
+                        "number": 1,
+                        "text": "[表面的中時] ダメージ量の50%混乱区間を後退"
+                    }
+                ],
+                "buff_debuff": [
+                    "混乱区間後退"
+                ]
+            }
+        ],
+        "defence" : {
+            "name": "回避",
+            "text": "",
+            "sin": null,
+            "physics": null,
+            "defence_type": "回避",
+            "defence_level": 41,
+            "base_attack": 5,
+            "coin_number": 1,
+            "coin_attack": 10,
+            "coin_effect": [
+
+            ],
+            "buff_debuff": [
+                
+            ]
+        },
+        "passive": {
+            "name": "遊興",
+            "text": "回避成功時、(憂鬱共鳴数x5)%の確率で回避スキルの威力分、混乱区間を後退",
+            "trigger": [
+                {
+                    "sin": "憂鬱",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "混乱区間後退"
+            ]
+        },
+        "support_passive": {
+            "name": "籠絡",
+            "text": "精神力の最も高い味方一名が、自分より精神力が低い敵を攻撃時にダメージ量+10%",
+            "trigger": [
+                {
+                    "sin": "憂鬱",
+                    "active_type": "共鳴",
+                    "number": 3
+                }
+            ],
+            "buff_debuff": [
+                "与ダメージ+"
+            ]
+        }
+    }
 ]
