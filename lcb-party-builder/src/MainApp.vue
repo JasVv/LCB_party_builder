@@ -259,7 +259,7 @@ function selectSinColorCss(sin: string) {
           <tr>
             <td>パッシブ</td>
             <td>
-              <template v-for="(trigger, idx) in v.parsonality.passive.trigger" :key="idx">
+              <template v-for="(trigger, idx) in v.personality.passive.trigger" :key="idx">
                 {{ `${trigger.active_type} ` }}
                 <label td :class="selectSinColorCss(trigger.sin)">
                   {{ `${trigger.number} ` }}
@@ -267,13 +267,13 @@ function selectSinColorCss(sin: string) {
               </template>
             </td>
             <td colspan=6>
-              {{ v.parsonality.passive.text }}
+              {{ v.personality.passive.text }}
             </td>
           </tr>
           <tr>
             <td>サポート</td>
             <td>
-              <template v-for="(trigger, idx) in v.parsonality.support_passive.trigger" :key="idx">
+              <template v-for="(trigger, idx) in v.personality.support_passive.trigger" :key="idx">
                 {{ `${trigger.active_type} ` }}
                 <label td :class="selectSinColorCss(trigger.sin)">
                   {{ `${trigger.number} ` }}
@@ -281,7 +281,7 @@ function selectSinColorCss(sin: string) {
               </template>
             </td>
             <td colspan=6>
-              {{ v.parsonality.support_passive.text }}
+              {{ v.personality.support_passive.text }}
             </td>
           </tr>
           <tr>
