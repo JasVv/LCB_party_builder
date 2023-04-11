@@ -86,6 +86,8 @@
         "defence" : {
             "name": "回避",
             "text": "",
+            "sin": null,
+            "physics": null,
             "defence_type": "回避",
             "defence_level": 36,
             "base_attack": 2,
@@ -211,6 +213,8 @@
         "defence" : {
             "name": "防御",
             "text": "",
+            "sin": null,
+            "physics": null,
             "defence_type": "防御",
             "defence_level": 38,
             "base_attack": 10,
@@ -344,6 +348,8 @@
         "defence" : {
             "name": "回避",
             "text": "",
+            "sin": null,
+            "physics": null,
             "defence_type": "回避",
             "defence_level": 30,
             "base_attack": 3,
@@ -490,6 +496,8 @@
         "defence" : {
             "name": "不潔ですね",
             "text": "[回避成功時] 対象の精神力-3",
+            "sin": null,
+            "physics": null,
             "defence_type": "回避",
             "defence_level": 31,
             "base_attack": 4,

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-interface CoinEffect {
+export interface CoinEffect {
   number: number;
   text: string;
 }
 
-interface Skill {
+export interface Skill {
   number: number,
   name: string;
   text: string;
@@ -19,7 +19,7 @@ interface Skill {
   buff_debuff: string[];
 }
 
-interface Defence {
+export interface Defence {
   name: string;
   text: string;
   defence_type: string;
@@ -33,20 +33,20 @@ interface Defence {
   buff_debuff: string[];
 }
 
-interface PassiveTrigger {
+export interface PassiveTrigger {
   sin: string;
   active_type: string;
   number: number;
 }
 
-interface Passive {
+export interface Passive {
   name: string;
   text: string;
   trigger: PassiveTrigger[];
   buff_debuff: string[];
 }
 
-interface Personality {
+export interface Personality {
   personality_id: number;
   character_id: number;
   name: string;

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-interface Character {
+export interface Character {
   character_id: number;
   name: string;
 }

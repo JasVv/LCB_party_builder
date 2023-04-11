@@ -82,6 +82,8 @@
         "defence" : {
             "name": "ガード",
             "text": "",
+            "sin": null,
+            "physics": null,
             "defence_type": "防御",
             "defence_level": 36,
             "base_attack": 7,
@@ -215,6 +217,8 @@
         "defence" : {
             "name": "防御",
             "text": "",
+            "sin": null,
+            "physics": null,
             "defence_type": "防御",
             "defence_level": 35,
             "base_attack": 9,
@@ -340,6 +344,8 @@
         "defence" : {
             "name": "反撃",
             "text": "",
+            "sin": null,
+            "physics": null,
             "defence_type": "反撃",
             "defence_level": 41,
             "base_attack": 8,

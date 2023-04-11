@@ -40,6 +40,7 @@
 
 .buff_debuff_select {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .buff_debuff_select label {
@@ -85,13 +86,13 @@
 }
 
 .font_color_gloom {
-  color: #87CEEB;
+  color: #96e1ff;
 }
 
 .font_color_pride {
-  color: #00008B;
+  color: #6574ff;
 }
 
 .font_color_envy {
-  color: #8A2BE2;
+  color: #ab51ff;
 }

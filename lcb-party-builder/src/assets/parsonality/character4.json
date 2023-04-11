@@ -83,6 +83,8 @@
         "defence" : {
             "name": "回避",
             "text": "",
+            "sin": null,
+            "physics": null,
             "defence_type": "回避",
             "defence_level": 28,
             "base_attack": 2,

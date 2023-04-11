@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
-import type Parsonality from './components/Parsonality.vue'
-import type Character from './components/Character.vue'
+import type { Personality } from './components/Parsonality.vue'
+import type { Character } from './components/Character.vue'
 
 import characters_json from '@/assets/characters.json'
 import parsonality_1_json from '@/assets/parsonality/character1.json'
@@ -70,8 +70,10 @@ data.value.view = all_data.personality
   })
 
 function recalculate() {
+  // キャラクター選択
   const charactor_select = (character.value.length ? all_data.personality.filter(p => character.value.some(v => v == p.character_id)) : all_data.personality).map(p => p.personality_id)
 
+  // 物理耐性選択
   const resistance_select = (resistance.value.length 
   ? all_data.personality.filter(p => {
     const sl = resistance.value.some(v => v == "slashing") ? p.resistance.slashing < 1 : false
@@ -81,10 +83,12 @@ function recalculate() {
   }) 
   : all_data.personality).map(p => p.personality_id)
 
+  // スキル罪悪属性選択
   const skill_sin_select = (skill_sin.value.length 
   ? all_data.personality.filter(p => p.skill.find(s => skill_sin.value.some(v => v == s.sin))) 
   : all_data.personality).map(p => p.personality_id)
 
+  // バフ・デバフ選択
   const buff_debuff_select = (buff_debuff.value.length 
     ? all_data.personality.filter(p => {
       const skill_buff_debuff = p.skill.find(s => s.buff_debuff.filter(b => buff_debuff.value.some(v => v == b)).length)
@@ -97,7 +101,11 @@ function recalculate() {
     : all_data.personality
   ).map(p => p.personality_id)
 
-  const target_personality = charactor_select.filter(value => resistance_select.includes(value) && skill_sin_select.includes(value) && buff_debuff_select.includes(value))
+  const target_personality = charactor_select.filter(value => 
+    resistance_select.includes(value) && 
+    skill_sin_select.includes(value) && 
+    buff_debuff_select.includes(value)
+  )
 
   data.value.view = all_data.personality
     .filter(p => target_personality.includes(p.personality_id))
@@ -234,13 +242,13 @@ function selectSinColorCss(sin: string) {
           <tr>
             <td>【{{ v.personality.name }}】{{ v.character.name }}</td> 
             <td :class="selectSinColorCss(v.personality.skill[0]?.sin)">
-              {{ v.personality.skill[0] ? `${v.personality.skill[0].base_attack} + (${v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` : ""  }}
+              {{ v.personality.skill[0] ? `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` : ""  }}
             </td> 
             <td :class="selectSinColorCss(v.personality.skill[1]?.sin)">
-              {{ v.personality.skill[1] ? `${v.personality.skill[1].base_attack} + (${v.personality.skill[1].coin_attack} * ${v.personality.skill[1].coin_number})` : ""  }}
+              {{ v.personality.skill[1] ? `${v.personality.skill[1].physics}${v.personality.skill[1].base_attack + (v.personality.skill[1].coin_attack * v.personality.skill[1].coin_number)} (${v.personality.skill[1].base_attack}, ${v.personality.skill[1].coin_attack} * ${v.personality.skill[1].coin_number})` : ""  }}
             </td> 
             <td :class="selectSinColorCss(v.personality.skill[2]?.sin)">
-              {{ v.personality.skill[2] ? `${v.personality.skill[2].base_attack} + (${v.personality.skill[2].coin_attack} * ${v.personality.skill[2].coin_number})` : ""  }}
+              {{ v.personality.skill[2] ? `${v.personality.skill[2].physics}${v.personality.skill[2].base_attack + (v.personality.skill[2].coin_attack * v.personality.skill[2].coin_number)} (${v.personality.skill[2].base_attack}, ${v.personality.skill[2].coin_attack} * ${v.personality.skill[2].coin_number})` : ""  }}
             </td> 
             <td>{{ v.personality.resistance.slashing }}</td>
             <td>{{ v.personality.resistance.penetration }}</td> 
