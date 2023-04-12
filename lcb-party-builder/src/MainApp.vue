@@ -2,7 +2,11 @@
 import { ref, type Ref } from 'vue'
 import type { Personality } from './components/Parsonality.vue'
 import type { Character } from './components/Character.vue'
-import {all_data} from './components/javascript/all_data'
+import CharacterSelect from './components/selectbox/CharacterSelect.vue'
+import ResistanceSelect from './components/selectbox/ResistanceSelect.vue'
+import SkillSinSelect from './components/selectbox/SkillSinSelect.vue'
+import BuffDebuffSelect from './components/selectbox/BuffDebuffSelect.vue'
+import { all_data } from './components/javascript/all_data'
 
 interface View {
   character: Character;
@@ -13,10 +17,10 @@ const all_buff_debuff: string[] = Array.from(new Set(all_data.personality.flatMa
   [...p.skill.flatMap(v => v.buff_debuff), ...p.defence.buff_debuff, ...p.passive.buff_debuff, ...p.support_passive.buff_debuff]
 ))).sort()
 
-const character: Ref<number[]> = ref([])
-const resistance: Ref<string[]> = ref([])
-const skill_sin: Ref<string[]> = ref([])
-const buff_debuff: Ref<string[]> = ref([])
+let character: number[] = []
+let resistance: string[] = []
+let skill_sin: string[] = []
+let buff_debuff: string[] = []
 
 const data = ref<{
   view: View[]
@@ -33,32 +37,53 @@ data.value.view = all_data.personality
     return view
   })
 
+function setCharacterValue(value: number[]) {
+  character = value;
+  recalculate();
+}
+
+function setResistanceValue(value: string[]) {
+  resistance = value;
+  recalculate();
+}
+
+function setSkillSinValue(value: string[]) {
+  skill_sin = value;
+  recalculate();
+}
+
+function setBuffDebuffValue(value: string[]) {
+  buff_debuff = value;
+  recalculate();
+}
+
 function recalculate() {
+
   // キャラクター選択
-  const charactor_select = (character.value.length ? all_data.personality.filter(p => character.value.some(v => v == p.character_id)) : all_data.personality).map(p => p.personality_id)
+  const charactor_select = (character.length ? all_data.personality.filter(p => character.some(v => v == p.character_id)) : all_data.personality).map(p => p.personality_id)
 
   // 物理耐性選択
-  const resistance_select = (resistance.value.length 
+  const resistance_select = (resistance.length 
   ? all_data.personality.filter(p => {
-    const sl = resistance.value.some(v => v == "slashing") ? p.resistance.slashing < 1 : false
-    const pe = resistance.value.some(v => v == "penetration") ? p.resistance.penetration < 1 : false
-    const bl = resistance.value.some(v => v == "blow") ? p.resistance.blow < 1 : false
+    const sl = resistance.some(v => v == "slashing") ? p.resistance.slashing < 1 : false
+    const pe = resistance.some(v => v == "penetration") ? p.resistance.penetration < 1 : false
+    const bl = resistance.some(v => v == "blow") ? p.resistance.blow < 1 : false
     return sl || pe || bl
   }) 
   : all_data.personality).map(p => p.personality_id)
 
   // スキル罪悪属性選択
-  const skill_sin_select = (skill_sin.value.length 
-  ? all_data.personality.filter(p => p.skill.find(s => skill_sin.value.some(v => v == s.sin))) 
+  const skill_sin_select = (skill_sin.length 
+  ? all_data.personality.filter(p => p.skill.find(s => skill_sin.some(v => v == s.sin))) 
   : all_data.personality).map(p => p.personality_id)
 
   // バフ・デバフ選択
-  const buff_debuff_select = (buff_debuff.value.length 
+  const buff_debuff_select = (buff_debuff.length 
     ? all_data.personality.filter(p => {
-      const skill_buff_debuff = p.skill.find(s => s.buff_debuff.filter(b => buff_debuff.value.some(v => v == b)).length)
-      const defence_buff_debuff = p.defence.buff_debuff.find(b => buff_debuff.value.some(v => v == b))
-      const passive_buff_debuff = p.passive.buff_debuff.find(b => buff_debuff.value.some(v => v == b))
-      const support_passive_buff_debuff = p.support_passive.buff_debuff.find(b => buff_debuff.value.some(v => v == b))
+      const skill_buff_debuff = p.skill.find(s => s.buff_debuff.filter(b => buff_debuff.some(v => v == b)).length)
+      const defence_buff_debuff = p.defence.buff_debuff.find(b => buff_debuff.some(v => v == b))
+      const passive_buff_debuff = p.passive.buff_debuff.find(b => buff_debuff.some(v => v == b))
+      const support_passive_buff_debuff = p.support_passive.buff_debuff.find(b => buff_debuff.some(v => v == b))
       
       return skill_buff_debuff || defence_buff_debuff || passive_buff_debuff || support_passive_buff_debuff
     }) 
@@ -113,72 +138,10 @@ function selectSinColorCss(sin: string) {
     </div>
 
     <div class="search">
-      <div class="search_contents">
-        <h4>
-          キャラクター
-        </h4>
-        <div class="search_checkbox">
-          <div class="character_select">
-            <input type="checkbox" v-model="character" value="1" v-on:change="recalculate()" /><label>イサン</label>
-            <input type="checkbox" v-model="character" value="2" v-on:change="recalculate()" /><label>ファウスト</label>
-            <input type="checkbox" v-model="character" value="3" v-on:change="recalculate()" /><label>ドンキホーテ</label>
-            <input type="checkbox" v-model="character" value="4" v-on:change="recalculate()" /><label>良秀</label>
-            <input type="checkbox" v-model="character" value="5" v-on:change="recalculate()" /><label>ムルソー</label>
-            <input type="checkbox" v-model="character" value="6" v-on:change="recalculate()" /><label>ホンル</label>
-          </div>
-          <div class="character_select">
-            <input type="checkbox" v-model="character" value="7" v-on:change="recalculate()" /><label>ヒースクリフ</label>
-            <input type="checkbox" v-model="character" value="8" v-on:change="recalculate()" /><label>イシュメール</label>
-            <input type="checkbox" v-model="character" value="9" v-on:change="recalculate()" /><label>ロージャ</label>
-            <input type="checkbox" v-model="character" value="11" v-on:change="recalculate()" /><label>シンクレア</label>
-            <input type="checkbox" v-model="character" value="12" v-on:change="recalculate()" /><label>ウーティス</label>
-            <input type="checkbox" v-model="character" value="13" v-on:change="recalculate()" /><label>グレゴール</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="search_contents">
-        <h4>
-          耐性
-        </h4>
-        <div class="search_checkbox">
-          <div class="resistance_select">
-            <input type="checkbox" v-model="resistance" value="slashing" v-on:change="recalculate()" /><label>斬撃</label>
-            <input type="checkbox" v-model="resistance" value="penetration" v-on:change="recalculate()" /><label>貫通</label>
-            <input type="checkbox" v-model="resistance" value="blow" v-on:change="recalculate()" /><label>打撃</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="search_contents">
-        <h4>
-          スキル罪悪属性
-        </h4>
-        <div class="search_checkbox">
-          <div class="skill_sin_select">
-            <input type="checkbox" v-model="skill_sin" value="憤怒" v-on:change="recalculate()" /><label>憤怒</label>
-            <input type="checkbox" v-model="skill_sin" value="色欲" v-on:change="recalculate()" /><label>色欲</label>
-            <input type="checkbox" v-model="skill_sin" value="怠惰" v-on:change="recalculate()" /><label>怠惰</label>
-            <input type="checkbox" v-model="skill_sin" value="暴食" v-on:change="recalculate()" /><label>暴食</label>
-            <input type="checkbox" v-model="skill_sin" value="憂鬱" v-on:change="recalculate()" /><label>憂鬱</label>
-            <input type="checkbox" v-model="skill_sin" value="傲慢" v-on:change="recalculate()" /><label>傲慢</label>
-            <input type="checkbox" v-model="skill_sin" value="嫉妬" v-on:change="recalculate()" /><label>嫉妬</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="search_contents">
-        <h4>
-          バフ・デバフ
-        </h4>
-        <div class="search_checkbox">
-          <div class="buff_debuff_select">
-            <div v-for="b in all_buff_debuff" :key="b">
-              <input type="checkbox" v-model="buff_debuff" :value="b" v-on:change="recalculate()" /><label>{{ b }}</label>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CharacterSelect @setCharacterValue="setCharacterValue"/>
+      <ResistanceSelect @setResistanceValue="setResistanceValue"/>
+      <SkillSinSelect @setSkillSinValue="setSkillSinValue"/>
+      <BuffDebuffSelect :all_buff_debuff="all_buff_debuff" @setBuffDebuffValue="setBuffDebuffValue"/>
     </div>
 
     <div class="result">
@@ -191,15 +154,17 @@ function selectSinColorCss(sin: string) {
           <th class="skill_width">スキル1</th> 
           <th class="skill_width">スキル2</th> 
           <th class="skill_width">スキル3</th> 
-          <th class="resistance_width">斬</th> 
-          <th class="resistance_width">貫</th> 
-          <th class="resistance_width">打</th> 
+          <th class="resistance_width">斬耐</th> 
+          <th class="resistance_width">貫耐</th> 
+          <th class="resistance_width">打耐</th> 
           <th class="speed_width">速度</th>
         </tr>
 
         <template v-for="v in data.view" :key="v.personality.personality_id">
           <tr>
-            <td rowspan="4"></td>
+            <td rowspan="4">
+
+            </td>
             <td colspan="2">【{{ v.personality.name }}】{{ v.character.name }}</td> 
             <td :class="selectSinColorCss(v.personality.skill[0]?.sin)">
               {{ v.personality.skill[0] ? `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack >= 0 ? `+${v.personality.skill[0].coin_attack}` : v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` : ""  }}
@@ -255,7 +220,14 @@ function selectSinColorCss(sin: string) {
                     {{ `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack >= 0 ? `+${v.personality.skill[0].coin_attack}` : v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` }}
                   </label>
                   <label>
-                    {{ v.personality.skill[0].text }}
+                    {{ 
+                      `
+                      ${ v.personality.skill[0].text } \n
+                      B \n
+                      C
+                      ` 
+                    }}
+                    
                   </label>
                   <label v-for="(coin_effect, idx) in v.personality.skill[0].coin_effect" :key="idx">
                     {{ coin_effect.number }} {{ coin_effect.text }}
