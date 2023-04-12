@@ -134,7 +134,7 @@ function selectSinColorCss(sin: string) {
     <div class="title">LCB Party Builder</div>
 
     <div class="selected">
-
+      
     </div>
 
     <div class="search">
