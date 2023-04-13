@@ -4,6 +4,7 @@ import type { Personality } from './components/Parsonality.vue'
 import type { Character } from './components/Character.vue'
 import CharacterSelect from './components/selectbox/CharacterSelect.vue'
 import ResistanceSelect from './components/selectbox/ResistanceSelect.vue'
+import SkillPhysicsSelect from './components/selectbox/SkillPhysicsSelect.vue'
 import SkillSinSelect from './components/selectbox/SkillSinSelect.vue'
 import BuffDebuffSelect from './components/selectbox/BuffDebuffSelect.vue'
 import SearchTableBody from './components/table/SearchTableBody.vue'
@@ -20,6 +21,7 @@ const all_buff_debuff: string[] = Array.from(new Set(all_data.personality.flatMa
 
 let character: number[] = []
 let resistance: string[] = []
+let skill_physics: string[] = []
 let skill_sin: string[] = []
 let buff_debuff: string[] = []
 
@@ -48,6 +50,11 @@ function setResistanceValue(value: string[]) {
   recalculate();
 }
 
+function setSkillPhysicsValue(value: string[]) {
+  skill_physics = value;
+  recalculate();
+}
+
 function setSkillSinValue(value: string[]) {
   skill_sin = value;
   recalculate();
@@ -73,6 +80,11 @@ function recalculate() {
   }) 
   : all_data.personality).map(p => p.personality_id)
 
+  // スキル物理属性選択
+  const skill_physics_select = (skill_physics.length 
+  ? all_data.personality.filter(p => p.skill.find(s => skill_physics.some(v => v == s.physics))) 
+  : all_data.personality).map(p => p.personality_id)
+
   // スキル罪悪属性選択
   const skill_sin_select = (skill_sin.length 
   ? all_data.personality.filter(p => p.skill.find(s => skill_sin.some(v => v == s.sin))) 
@@ -93,6 +105,7 @@ function recalculate() {
 
   const target_personality = charactor_select.filter(value => 
     resistance_select.includes(value) && 
+    skill_physics_select.includes(value) && 
     skill_sin_select.includes(value) && 
     buff_debuff_select.includes(value)
   )
@@ -137,6 +150,7 @@ function recalculate() {
       <div class="overflow-scroll">
         <CharacterSelect @setCharacterValue="setCharacterValue"/>
         <ResistanceSelect @setResistanceValue="setResistanceValue"/>
+        <SkillPhysicsSelect @setSkillPhysicsValue="setSkillPhysicsValue"/>
         <SkillSinSelect @setSkillSinValue="setSkillSinValue"/>
         <BuffDebuffSelect :all_buff_debuff="all_buff_debuff" @setBuffDebuffValue="setBuffDebuffValue"/>
       </div>
