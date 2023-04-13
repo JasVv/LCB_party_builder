@@ -6,9 +6,10 @@ import CharacterSelect from './components/selectbox/CharacterSelect.vue'
 import ResistanceSelect from './components/selectbox/ResistanceSelect.vue'
 import SkillSinSelect from './components/selectbox/SkillSinSelect.vue'
 import BuffDebuffSelect from './components/selectbox/BuffDebuffSelect.vue'
+import SearchTableBody from './components/table/SearchTableBody.vue'
 import { all_data } from './components/javascript/all_data'
 
-interface View {
+export interface View {
   character: Character;
   personality: Personality;
 }
@@ -117,129 +118,53 @@ function recalculate() {
 
 }
 
-function selectSinColorCss(sin: string) {
-  return sin == "憤怒" ? "font_color_wrath" : 
-  sin == "色欲" ? "font_color_lust" :
-  sin == "怠惰" ? "font_color_sloth" :
-  sin == "暴食" ? "font_color_gluttony" :
-  sin == "憂鬱" ? "font_color_gloom" :
-  sin == "傲慢" ? "font_color_pride" : 
-  sin == "嫉妬" ? "font_color_envy" : ""
-} 
+
 </script>
 
 <template>
+  <div>
+    <div class="grid grid-cols-[1fr_1fr] grid-rows-[50px_400px_500px] gap-4">
+      <div class="col-span-2 sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
+        <span class="self-center text-2xl font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+          LCB Party Builder
+        </span>
+      </div>
 
-  <div class="container">
-    <div class="title">LCB Party Builder</div>
+      <div class="row-span-2">
+        
+      </div>
 
-    <div class="selected">
-      
-    </div>
+      <div class="overflow-scroll">
+        <CharacterSelect @setCharacterValue="setCharacterValue"/>
+        <ResistanceSelect @setResistanceValue="setResistanceValue"/>
+        <SkillSinSelect @setSkillSinValue="setSkillSinValue"/>
+        <BuffDebuffSelect :all_buff_debuff="all_buff_debuff" @setBuffDebuffValue="setBuffDebuffValue"/>
+      </div>
 
-    <div class="search">
-      <CharacterSelect @setCharacterValue="setCharacterValue"/>
-      <ResistanceSelect @setResistanceValue="setResistanceValue"/>
-      <SkillSinSelect @setSkillSinValue="setSkillSinValue"/>
-      <BuffDebuffSelect :all_buff_debuff="all_buff_debuff" @setBuffDebuffValue="setBuffDebuffValue"/>
-    </div>
+      <div class="overflow-scroll">
+        <div class="pr-2">
+          <table class="">
+            <thead class="text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-100 sticky top-0">
+              <tr class="">
+                <th class="w-80 py-1.5 sticky top-0">人格</th> 
+                <th class="w-28 py-1.5 sticky top-0">スキル1</th> 
+                <th class="w-28 py-1.5 sticky top-0">スキル2</th> 
+                <th class="w-28 py-1.5 sticky top-0">スキル3</th> 
+                <th class="w-14 py-1.5 sticky top-0">斬耐</th> 
+                <th class="w-14 py-1.5 sticky top-0">貫耐</th> 
+                <th class="w-14 py-1.5 sticky top-0">打耐</th> 
+                <th class="w-16 py-1.5 sticky top-0">速度</th>
+              </tr>
+            </thead>
 
-    <div class="result">
-
-      <table class="personality_table">
-
-        <tr>
-          <th></th>
-          <th colspan="2" class="name_width">人格</th> 
-          <th class="skill_width">スキル1</th> 
-          <th class="skill_width">スキル2</th> 
-          <th class="skill_width">スキル3</th> 
-          <th class="resistance_width">斬耐</th> 
-          <th class="resistance_width">貫耐</th> 
-          <th class="resistance_width">打耐</th> 
-          <th class="speed_width">速度</th>
-        </tr>
-
-        <template v-for="v in data.view" :key="v.personality.personality_id">
-          <tr>
-            <td rowspan="4">
-
-            </td>
-            <td colspan="2">【{{ v.personality.name }}】{{ v.character.name }}</td> 
-            <td :class="selectSinColorCss(v.personality.skill[0]?.sin)">
-              {{ v.personality.skill[0] ? `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack >= 0 ? `+${v.personality.skill[0].coin_attack}` : v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` : ""  }}
-            </td> 
-            <td :class="selectSinColorCss(v.personality.skill[1]?.sin)">
-              {{ v.personality.skill[1] ? `${v.personality.skill[1].physics}${v.personality.skill[1].base_attack + (v.personality.skill[1].coin_attack * v.personality.skill[1].coin_number)} (${v.personality.skill[1].base_attack}, ${v.personality.skill[1].coin_attack >= 0 ? `+${v.personality.skill[1].coin_attack}` : v.personality.skill[1].coin_attack} * ${v.personality.skill[1].coin_number})` : ""  }}
-            </td> 
-            <td :class="selectSinColorCss(v.personality.skill[2]?.sin)">
-              {{ v.personality.skill[2] ? `${v.personality.skill[2].physics}${v.personality.skill[2].base_attack + (v.personality.skill[2].coin_attack * v.personality.skill[2].coin_number)} (${v.personality.skill[2].base_attack}, ${v.personality.skill[2].coin_attack >= 0 ? `+${v.personality.skill[2].coin_attack}` : v.personality.skill[2].coin_attack} * ${v.personality.skill[2].coin_number})` : ""  }}
-            </td> 
-            <td>{{ v.personality.resistance.slashing }}</td>
-            <td>{{ v.personality.resistance.penetration }}</td> 
-            <td>{{ v.personality.resistance.blow }}</td> 
-            <td>{{ v.personality.speed_min }} ~ {{ v.personality.speed_max }}</td> 
-          </tr>
-          <tr>
-            <td>パッシブ</td>
-            <td>
-              <template v-for="(trigger, idx) in v.personality.passive.trigger" :key="idx">
-                {{ `${trigger.active_type} ` }}
-                <label td :class="selectSinColorCss(trigger.sin)">
-                  {{ `${trigger.number} ` }}
-                </label>
+            <tbody class="text-sm font-medium dark:text-gray-300">
+              <template v-for="(v, idx) in data.view" :key="v.personality.personality_id">
+                <SearchTableBody :v="v" :idx="idx" />
               </template>
-            </td>
-            <td colspan=7>
-              {{ v.personality.passive.text }}
-            </td>
-          </tr>
-          <tr>
-            <td>サポート</td>
-            <td>
-              <template v-for="(trigger, idx) in v.personality.support_passive.trigger" :key="idx">
-                {{ `${trigger.active_type} ` }}
-                <label td :class="selectSinColorCss(trigger.sin)">
-                  {{ `${trigger.number} ` }}
-                </label>
-              </template>
-            </td>
-            <td colspan=7>
-              {{ v.personality.support_passive.text }}
-            </td>
-          </tr>
-          <tr>
-            <td colspan=9>
-              <details>
-                <summary>
-                  <span class="detail_close">スキル詳細</span>
-                </summary>
-                <div>
-                  {{ v.personality.skill[0].name }}
-                  <label td :class="selectSinColorCss(v.personality.skill[0].sin)">
-                    {{ `${v.personality.skill[0].physics}${v.personality.skill[0].base_attack + (v.personality.skill[0].coin_attack * v.personality.skill[0].coin_number)} (${v.personality.skill[0].base_attack}, ${v.personality.skill[0].coin_attack >= 0 ? `+${v.personality.skill[0].coin_attack}` : v.personality.skill[0].coin_attack} * ${v.personality.skill[0].coin_number})` }}
-                  </label>
-                  <label>
-                    {{ 
-                      `
-                      ${ v.personality.skill[0].text } \n
-                      B \n
-                      C
-                      ` 
-                    }}
-                    
-                  </label>
-                  <label v-for="(coin_effect, idx) in v.personality.skill[0].coin_effect" :key="idx">
-                    {{ coin_effect.number }} {{ coin_effect.text }}
-                  </label>
-                </div>
-              </details>
-            </td>
-          </tr>
-        </template>
-
-      </table>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-
 </template>

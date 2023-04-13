@@ -11,15 +11,15 @@ const emitEvent = () => {
 </script>
 
 <template>
-    <div class="search_contents">
-        <h4>
+    <div class="mb-4">
+        <h4 class="mb-1 font-semibold">
           耐性
         </h4>
-        <div class="search_checkbox">
-          <div class="resistance_select">
-            <input type="checkbox" v-model="resistance" value="slashing" v-on:change="emitEvent" /><label>斬撃</label>
-            <input type="checkbox" v-model="resistance" value="penetration" v-on:change="emitEvent" /><label>貫通</label>
-            <input type="checkbox" v-model="resistance" value="blow" v-on:change="emitEvent" /><label>打撃</label>
+        <div class="pl-3">
+          <div class="flex">
+            <input type="checkbox" id="checkbox_resistance_slashing" class="checkbox_normal" v-model="resistance" value="slashing" v-on:change="emitEvent" /><label for="checkbox_resistance_slashing" class="label_checkbox w-12">斬撃</label>
+            <input type="checkbox" id="checkbox_resistance_penetration" class="checkbox_normal" v-model="resistance" value="penetration" v-on:change="emitEvent" /><label for="checkbox_resistance_penetration" class="label_checkbox w-12">貫通</label>
+            <input type="checkbox" id="checkbox_resistance_blow" class="checkbox_normal" v-model="resistance" value="blow" v-on:change="emitEvent" /><label for="checkbox_resistance_blow" class="label_checkbox w-12">打撃</label>
           </div>
         </div>
       </div>

@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .checkbox_normal {
+    @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+  }
+
+  .label_checkbox {
+    @apply ml-1 text-sm font-medium dark:text-gray-300
+  }
+}
+
+@layer utilities {
+  .font_color_wrath {
+    @apply dark:text-red-600
+  }
+
+  .font_color_lust {
+    @apply dark:text-orange-400
+  }
+
+  .font_color_sloth {
+    @apply dark:text-yellow-400
+  }
+
+  .font_color_gluttony {
+    @apply dark:text-lime-500
+  }
+
+  .font_color_gloom {
+    @apply dark:text-cyan-400
+  }
+
+  .font_color_pride {
+    @apply dark:text-blue-600
+  }
+
+  .font_color_envy {
+    @apply dark:text-violet-500
+  }
+}
