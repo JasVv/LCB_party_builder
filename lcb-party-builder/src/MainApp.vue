@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type Ref } from 'vue'
+import { ref } from 'vue'
 import type { Personality } from './components/Parsonality.vue'
 import type { Character } from './components/Character.vue'
 import CharacterSelect from './components/selectbox/CharacterSelect.vue'
@@ -8,6 +8,8 @@ import SkillPhysicsSelect from './components/selectbox/SkillPhysicsSelect.vue'
 import SkillSinSelect from './components/selectbox/SkillSinSelect.vue'
 import BuffDebuffSelect from './components/selectbox/BuffDebuffSelect.vue'
 import SearchTableBody from './components/table/SearchTableBody.vue'
+import SelectedPersonalities from './components/SelectedPersonalities.vue'
+
 import { all_data } from './components/javascript/all_data'
 
 export interface View {
@@ -40,32 +42,32 @@ data.value.view = all_data.personality
     return view
   })
 
-function setCharacterValue(value: number[]) {
+const setCharacterValue = (value: number[]) => {
   character = value;
   recalculate();
 }
 
-function setResistanceValue(value: string[]) {
+const setResistanceValue = (value: string[]) => {
   resistance = value;
   recalculate();
 }
 
-function setSkillPhysicsValue(value: string[]) {
+const setSkillPhysicsValue = (value: string[]) => {
   skill_physics = value;
   recalculate();
 }
 
-function setSkillSinValue(value: string[]) {
+const setSkillSinValue = (value: string[]) => {
   skill_sin = value;
   recalculate();
 }
 
-function setBuffDebuffValue(value: string[]) {
+const setBuffDebuffValue = (value: string[]) => {
   buff_debuff = value;
   recalculate();
 }
 
-function recalculate() {
+const recalculate = () => {
 
   // キャラクター選択
   const charactor_select = (character.length ? all_data.personality.filter(p => character.some(v => v == p.character_id)) : all_data.personality).map(p => p.personality_id)
@@ -144,10 +146,10 @@ function recalculate() {
       </div>
 
       <div class="row-span-2">
-        
+        <SelectedPersonalities />
       </div>
 
-      <div class="overflow-scroll">
+      <div class="overflow-y-scroll">
         <CharacterSelect @setCharacterValue="setCharacterValue"/>
         <ResistanceSelect @setResistanceValue="setResistanceValue"/>
         <SkillPhysicsSelect @setSkillPhysicsValue="setSkillPhysicsValue"/>
@@ -155,7 +157,7 @@ function recalculate() {
         <BuffDebuffSelect :all_buff_debuff="all_buff_debuff" @setBuffDebuffValue="setBuffDebuffValue"/>
       </div>
 
-      <div class="overflow-scroll">
+      <div class="overflow-y-scroll">
         <div class="pr-2">
           <table class="">
             <thead class="text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-100 sticky top-0">
@@ -173,7 +175,7 @@ function recalculate() {
 
             <tbody class="text-sm font-medium dark:text-gray-300">
               <template v-for="(v, idx) in data.view" :key="v.personality.personality_id">
-                <SearchTableBody :v="v" :idx="idx" />
+                <SearchTableBody :v = "v" :idx = "idx" />
               </template>
             </tbody>
           </table>

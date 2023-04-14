@@ -1,4 +1,4 @@
-export function selectSinColorCss(sin: string) {
+export const selectSinColorCss = (sin: string) => {
   return sin == "憤怒" ? "font_color_wrath" : 
   sin == "色欲" ? "font_color_lust" :
   sin == "怠惰" ? "font_color_sloth" :
