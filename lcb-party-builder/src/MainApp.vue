@@ -149,7 +149,7 @@ const recalculate = () => {
         <SelectedPersonalities />
       </div>
 
-      <div class="overflow-y-scroll">
+      <div>
         <CharacterSelect @setCharacterValue="setCharacterValue"/>
         <ResistanceSelect @setResistanceValue="setResistanceValue"/>
         <SkillPhysicsSelect @setSkillPhysicsValue="setSkillPhysicsValue"/>
