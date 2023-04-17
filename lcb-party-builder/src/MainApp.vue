@@ -138,47 +138,51 @@ const recalculate = () => {
 
 <template>
   <div>
-    <div class="grid grid-cols-[1fr_1fr] grid-rows-[50px_400px_500px] gap-4">
+    <div class="grid grid-cols-[1fr_1fr] grid-rows-[50px_1fr] gap-4">
       <div class="col-span-2 sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
         <span class="self-center text-2xl font-semibold text-gray-900 whitespace-nowrap dark:text-white">
           LCB Party Builder
         </span>
       </div>
 
-      <div class="row-span-2">
+      <div class="">
         <SelectedPersonalities />
       </div>
 
-      <div>
-        <CharacterSelect @setCharacterValue="setCharacterValue"/>
-        <ResistanceSelect @setResistanceValue="setResistanceValue"/>
-        <SkillPhysicsSelect @setSkillPhysicsValue="setSkillPhysicsValue"/>
-        <SkillSinSelect @setSkillSinValue="setSkillSinValue"/>
-        <BuffDebuffSelect :all_buff_debuff="all_buff_debuff" @setBuffDebuffValue="setBuffDebuffValue"/>
-      </div>
+      <div class="">
+        <details class="ml-3">
+          <summary>
+            <span class="ml-1">絞り込み</span>
+          </summary>
+          <CharacterSelect @setCharacterValue="setCharacterValue"/>
+          <ResistanceSelect @setResistanceValue="setResistanceValue"/>
+          <SkillPhysicsSelect @setSkillPhysicsValue="setSkillPhysicsValue"/>
+          <SkillSinSelect @setSkillSinValue="setSkillSinValue"/>
+          <BuffDebuffSelect :all_buff_debuff="all_buff_debuff" @setBuffDebuffValue="setBuffDebuffValue"/>
+        </details>
+        <div class="mt-3 max-h-full overflow-y-scroll">
+          <div class="pr-2">
+            <table class="">
+              <thead class="text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-100 sticky top-0">
+                <tr class="">
+                  <th class="w-80 py-1.5 sticky top-0">人格</th> 
+                  <th class="w-28 py-1.5 sticky top-0">スキル1</th> 
+                  <th class="w-28 py-1.5 sticky top-0">スキル2</th> 
+                  <th class="w-28 py-1.5 sticky top-0">スキル3</th> 
+                  <th class="w-14 py-1.5 sticky top-0">斬耐</th> 
+                  <th class="w-14 py-1.5 sticky top-0">貫耐</th> 
+                  <th class="w-14 py-1.5 sticky top-0">打耐</th> 
+                  <th class="w-16 py-1.5 sticky top-0">速度</th>
+                </tr>
+              </thead>
 
-      <div class="overflow-y-scroll">
-        <div class="pr-2">
-          <table class="">
-            <thead class="text-sm bg-gray-50 dark:bg-gray-700 dark:text-gray-100 sticky top-0">
-              <tr class="">
-                <th class="w-80 py-1.5 sticky top-0">人格</th> 
-                <th class="w-28 py-1.5 sticky top-0">スキル1</th> 
-                <th class="w-28 py-1.5 sticky top-0">スキル2</th> 
-                <th class="w-28 py-1.5 sticky top-0">スキル3</th> 
-                <th class="w-14 py-1.5 sticky top-0">斬耐</th> 
-                <th class="w-14 py-1.5 sticky top-0">貫耐</th> 
-                <th class="w-14 py-1.5 sticky top-0">打耐</th> 
-                <th class="w-16 py-1.5 sticky top-0">速度</th>
-              </tr>
-            </thead>
-
-            <tbody class="text-sm font-medium dark:text-gray-300">
-              <template v-for="(v, idx) in data.view" :key="v.personality.personality_id">
-                <SearchTableBody :v = "v" :idx = "idx" />
-              </template>
-            </tbody>
-          </table>
+              <tbody class="text-sm font-medium dark:text-gray-300">
+                <template v-for="(v, idx) in data.view" :key="v.personality.personality_id">
+                  <SearchTableBody :v = "v" :idx = "idx" />
+                </template>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
