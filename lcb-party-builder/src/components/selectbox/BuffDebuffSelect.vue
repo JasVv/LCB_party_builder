@@ -23,7 +23,7 @@ watch(buff_debuff, emitEvent)
     <h4 class="mb-1 font-semibold">
       バフ・デバフ
     </h4>
-    <div class="pl-3">
+    <div class="w-11/12">
       <Multiselect
         v-model="buff_debuff"
         mode="tags"
