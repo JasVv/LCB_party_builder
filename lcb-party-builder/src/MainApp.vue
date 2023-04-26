@@ -168,7 +168,7 @@ const recalculate = () => {
                 :class="showTab == '2' ? 'text-white bg-blue-500 active' : 'dark:hover:bg-gray-800 dark:hover:text-white'"
                 @click="showTab = '2'" 
               >
-                EGO
+                E.G.O
               </button>
           </li>
         </ul>
